@@ -6,34 +6,28 @@
 <title>Абылбек және Даяна · 26 шілде 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Marcellus&family=Allura&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #141524;
-    --bg-2: #1c1d33;
-    --card: #ffffff;
-    --ink: #111827;
-    --ink-2: #374151;
-    --muted: #6b7280;
-    --muted-2: #9ca3af;
-    --border: #e5e7eb;
-    --grad-from: #ec4899;
-    --grad-via: #f43f5e;
-    --grad-to: #ef4444;
-    --grad-soft-1: #fce7f3;
-    --grad-soft-2: #ffe4e6;
+    --bg: #f0ebde;
+    --cream: #f5f0e3;
+    --cream-soft: #faf6ed;
+    --sage: #7a8e6b;
+    --sage-dark: #4a5d3f;
+    --sage-darker: #364528;
+    --sage-light: #b5c4a4;
+    --sage-bg: #94a988;
+    --gold: #c9a96e;
+    --gold-dark: #a6864f;
+    --ink: #2e3a26;
+    --muted: #6f7a64;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { overflow-x: hidden; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
     background: var(--bg);
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(236,72,153,0.15), transparent 60%),
-      radial-gradient(ellipse 70% 60% at 80% 60%, rgba(244,63,94,0.10), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 20% 100%, rgba(239,68,68,0.10), transparent 60%);
-    background-attachment: fixed;
     color: var(--ink);
     line-height: 1.5;
     font-weight: 400;
@@ -41,553 +35,775 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* sticky header */
+  /* Top back-button */
   .top-bar {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(20, 21, 36, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 16px 16px 0;
+    pointer-events: none;
   }
-  .top-bar-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: rgba(255,255,255,0.9);
-  }
-  .top-bar .brand {
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .top-bar .brand .dot {
-    width: 22px; height: 22px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
+  .back-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    box-shadow: 0 4px 12px rgba(244,63,94,0.4);
-  }
-  .top-bar .meta {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
+    gap: 8px;
+    background: white;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 18px 10px 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--sage-dark);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    cursor: pointer;
+    pointer-events: auto;
   }
 
   .container {
-    max-width: 720px;
+    max-width: 540px;
     margin: 0 auto;
-    padding: 24px 20px 60px;
+    padding: 0 0 24px;
   }
 
-  /* Cards */
-  .card {
+  /* Pages */
+  .page {
     position: relative;
-    background: var(--card);
-    border-radius: 28px;
-    padding: 32px 24px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 60px 28px 80px;
+    min-height: 90vh;
   }
-  .card + .card { margin-top: 20px; }
-  .card:hover { box-shadow: 0 24px 48px rgba(0,0,0,0.28); }
 
-  .card-corner-glow {
+  .page.cream { background: var(--cream); }
+  .page.sage { background: var(--sage-bg); color: white; }
+
+  /* Floral garland (top decoration) */
+  .garland-top, .garland-bottom {
     position: absolute;
-    top: 0; right: 0;
-    width: 140px; height: 140px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
-    opacity: 0.06;
-    transform: translate(50px, -60px);
+    left: -10%;
+    width: 120%;
+    height: 180px;
     pointer-events: none;
+    z-index: 1;
   }
+  .garland-top { top: -10px; }
+  .garland-bottom { bottom: -10px; transform: scaleY(-1); }
 
-  /* Section emoji icon */
-  .icon-bubble {
-    width: 64px;
-    height: 64px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    margin: 0 auto 18px;
-    box-shadow: 0 10px 24px rgba(244,63,94,0.35);
-    transition: transform 0.3s;
+  .corner-floral {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.55;
   }
-  .card:hover .icon-bubble { transform: scale(1.06) rotate(-3deg); }
+  .corner-floral.bl { bottom: -30px; left: -40px; }
+  .corner-floral.tr { top: -30px; right: -40px; transform: scaleX(-1); }
 
-  .card-title {
-    font-weight: 700;
-    font-size: 22px;
+  .page > * { position: relative; z-index: 2; }
+
+  /* Header label */
+  .label {
+    font-family: 'Marcellus', serif;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 18px;
     text-align: center;
-    color: var(--ink);
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
+    color: var(--sage-dark);
   }
-  .card-sub {
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 18px;
-  }
+  .page.sage .label { color: white; }
 
-  /* HERO */
-  .hero {
-    padding: 48px 24px 36px;
-    text-align: center;
-    background: linear-gradient(135deg, #fff 0%, #fff5f7 100%);
-  }
-  .hero .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--grad-soft-1);
-    color: var(--grad-via);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 999px;
-    margin-bottom: 18px;
-    letter-spacing: 0.04em;
-  }
-  .hero h1 {
-    font-size: clamp(34px, 7vw, 48px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    margin-bottom: 8px;
-  }
-  .hero h1 .amp {
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 300;
-    font-style: italic;
-    margin: 0 4px;
-  }
-  .hero .date {
-    margin-top: 10px;
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--ink-2);
-    letter-spacing: 0.06em;
-  }
-  .hero .city {
-    color: var(--muted);
-    font-size: 13px;
-    margin-top: 2px;
-  }
-
-  /* Countdown */
-  .countdown {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 28px;
-  }
-  .count-cell {
-    background: linear-gradient(135deg, #fff5f7, #fff);
-    border: 1px solid var(--grad-soft-1);
-    border-radius: 16px;
-    padding: 14px 6px;
-  }
-  .count-cell .n {
-    font-size: 28px;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-to));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
+  /* COVER */
+  .cover { text-align: center; padding-top: 160px; padding-bottom: 80px; }
+  .cover .label { font-size: 16px; margin-bottom: 30px; }
+  .cover .rings { width: 130px; margin: 0 auto 20px; }
+  .cover .names {
+    font-family: 'Allura', cursive;
+    color: var(--sage-dark);
+    font-size: clamp(56px, 14vw, 84px);
     line-height: 1;
+    margin-top: 10px;
   }
-  .count-cell .u {
-    font-size: 10px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 4px;
-    font-weight: 500;
+  .cover .amp {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.55em;
+    margin: 8px 0;
+    color: var(--sage-dark);
   }
-
-  /* Calendar */
-  .calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-    margin-top: 8px;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .calendar .dow {
-    text-align: center;
-    color: var(--muted-2);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding-bottom: 4px;
-  }
-  .calendar .day {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink-2);
-    background: #f9fafb;
-  }
-  .calendar .day.dim { color: #d1d5db; background: transparent; }
-  .calendar .day.mark {
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
-    color: white;
-    font-weight: 700;
-    box-shadow: 0 8px 16px rgba(244,63,94,0.35);
-    transform: scale(1.05);
-  }
-  .cal-caption {
-    text-align: center;
-    color: var(--muted);
+  .cover .date-line {
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.3em;
     font-size: 13px;
-    margin-top: 16px;
+    color: var(--sage-dark);
+    margin-top: 36px;
+    text-transform: uppercase;
+  }
+
+  /* GREETING (sage background) */
+  .greeting-page { text-align: center; padding-top: 140px; }
+  .greeting-page h2 {
+    font-family: 'Marcellus', serif;
+    color: white;
+    letter-spacing: 0.18em;
+    font-size: 26px;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .greeting-page .invite-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: white;
+    line-height: 1.6;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .greeting-page .invite-body strong {
+    font-weight: 600;
+    color: var(--cream-soft);
+  }
+  .greeting-page .signature {
+    margin-top: 44px;
+    font-family: 'Allura', cursive;
+    font-size: 32px;
+    color: white;
+  }
+  .greeting-page .signature-names {
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.2em;
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+  }
+
+  /* DATE */
+  .date-page { text-align: center; padding-top: 130px; padding-bottom: 100px; }
+  .date-page .month {
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    font-size: 19px;
+    color: var(--sage-dark);
+    margin-bottom: 38px;
+  }
+  .date-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--sage-light);
+    font-weight: 400;
+  }
+  .date-row .focus {
+    position: relative;
+    color: var(--sage-dark);
+    font-size: 30px;
+    padding: 0 6px;
+  }
+  .date-row .focus::before {
+    content: "";
+    position: absolute;
+    inset: -22px -10px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 70' fill='none' stroke='%234a5d3f' stroke-width='1.6'><path d='M40 62 C 14 44 6 28 14 18 C 22 8 34 12 40 22 C 46 12 58 8 66 18 C 74 28 66 44 40 62 Z'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+  }
+  .clock {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--sage-dark);
+    letter-spacing: 0.08em;
+    margin-bottom: 26px;
+  }
+  .clock .hand { font-size: 16px; color: var(--sage); letter-spacing: 0.2em; margin-right: 10px; }
+  .year {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 78px;
+    color: var(--sage-dark);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    margin-bottom: 38px;
+  }
+  .dow-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    font-family: 'Marcellus', serif;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+  }
+  .dow-list .dow {
+    padding: 6px 16px;
+    border: 1.5px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .dow-list .dow.active {
+    color: var(--sage-dark);
+    border-color: var(--sage-dark);
     font-weight: 500;
   }
-  .cal-caption strong { color: var(--ink); font-weight: 600; }
 
-  .invite-text {
-    text-align: center;
-    color: var(--ink-2);
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 460px;
-    margin: 20px auto 0;
+  /* PLACE */
+  .place-page { padding-top: 120px; text-align: center; }
+  .place-page .label { margin-bottom: 30px; }
+  .place-img {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, #d4d6c5, #b8c4a8);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    position: relative;
   }
-
-  /* Place */
-  .place-name {
-    font-size: 26px;
-    font-weight: 700;
-    text-align: center;
-    color: var(--ink);
-    margin-bottom: 4px;
-    letter-spacing: -0.01em;
-  }
+  .place-img svg { width: 100%; height: 100%; display: block; }
   .place-city {
-    text-align: center;
-    color: var(--muted);
-    margin-bottom: 22px;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--cream-soft);
+    font-size: 22px;
+    margin-bottom: 4px;
   }
-  .btn-grad {
+  .place-venue {
+    font-family: 'Cormorant Garamond', serif;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .map-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 14px 24px;
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
+    gap: 10px;
+    background: rgba(255,255,255,0.2);
     color: white;
-    font-weight: 600;
-    font-size: 14px;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 10px 24px rgba(244,63,94,0.35);
-    transition: transform 0.25s, box-shadow 0.25s;
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(6px);
+    transition: background 0.3s;
   }
-  .btn-grad:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(244,63,94,0.45); }
-  .btn-grad:active { transform: translateY(0); }
+  .map-btn:hover { background: rgba(255,255,255,0.32); }
 
-  /* Program */
-  .program-list { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  /* PROGRAM */
+  .program-page { padding-top: 120px; text-align: center; }
+  .program-page h2 { font-family: 'Marcellus', serif; letter-spacing: 0.3em; font-size: 22px; color: var(--sage-dark); text-transform: uppercase; margin-bottom: 42px; }
   .program-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 16px;
-    background: #f9fafb;
-    border-radius: 18px;
-    border: 1px solid var(--border);
-    transition: transform 0.25s, background 0.25s;
+    margin: 28px 0;
+    position: relative;
   }
-  .program-item:hover {
-    transform: translateX(4px);
-    background: linear-gradient(135deg, #fff5f7, #f9fafb);
+  .program-item + .program-item::before {
+    content: "";
+    width: 1px;
+    height: 28px;
+    background: var(--sage-light);
+    margin-bottom: 16px;
   }
-  .program-item .em {
-    flex-shrink: 0;
-    width: 48px; height: 48px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--grad-from), var(--grad-via), var(--grad-to));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    box-shadow: 0 6px 14px rgba(244,63,94,0.3);
+  .program-item .time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--sage-dark);
+    font-weight: 500;
+    line-height: 1;
   }
-  .program-item .info { flex: 1; }
-  .program-item .t {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .program-item .l {
-    font-size: 13px;
+  .program-item .name {
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 12px;
     color: var(--muted);
-    margin-top: 2px;
+    margin-top: 8px;
   }
 
-  /* Dress code */
+  /* DRESS */
+  .dress-page { padding-top: 120px; text-align: center; }
+  .dress-page h2 { font-family: 'Marcellus', serif; letter-spacing: 0.3em; font-size: 22px; text-transform: uppercase; margin-bottom: 18px; color: white; }
+  .dress-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: white;
+    line-height: 1.55;
+    max-width: 380px;
+    margin: 0 auto 28px;
+  }
   .palette {
     display: flex;
     justify-content: center;
     gap: 14px;
-    margin-top: 20px;
     flex-wrap: wrap;
   }
   .swatch {
-    width: 38px; height: 38px;
+    width: 44px; height: 44px;
     border-radius: 50%;
     border: 2px solid white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  .dress-text {
-    text-align: center;
-    color: var(--ink-2);
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 460px;
-    margin: 0 auto;
-  }
-
-  /* Note */
-  .note-text {
-    text-align: center;
-    color: var(--ink-2);
-    font-size: 14px;
-    line-height: 1.65;
-    max-width: 460px;
-    margin: 0 auto;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
   }
 
   /* RSVP */
-  form { display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 0 auto; }
-  .field {
+  .rsvp-page { padding-top: 120px; text-align: center; }
+  .rsvp-page h2 {
+    font-family: 'Marcellus', serif;
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    color: var(--sage-dark);
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+  .rsvp-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 420px;
+    margin: 0 auto 28px;
+  }
+  .rsvp-opt {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: rgba(122, 142, 107, 0.08);
+    border: 1.5px solid rgba(122, 142, 107, 0.25);
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--sage-dark);
+    transition: all 0.25s;
+  }
+  .rsvp-opt input { position: absolute; opacity: 0; }
+  .rsvp-opt .radio {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--sage-light);
+    flex-shrink: 0;
     position: relative;
+    transition: all 0.25s;
   }
-  .field label {
-    display: block;
-    font-size: 12px;
-    color: var(--muted);
-    font-weight: 600;
-    margin-bottom: 6px;
-    letter-spacing: 0.04em;
+  .rsvp-opt input:checked + .radio {
+    border-color: var(--sage-dark);
+    background: var(--sage-dark);
   }
-  input, select {
+  .rsvp-opt input:checked + .radio::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: white;
+    border-radius: 50%;
+  }
+  .rsvp-opt:has(input:checked) {
+    background: rgba(122, 142, 107, 0.2);
+    border-color: var(--sage-dark);
+  }
+  .rsvp-name {
     width: 100%;
-    padding: 14px 16px;
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    font-family: inherit;
-    font-size: 15px;
-    color: var(--ink);
-    background: #f9fafb;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  input:focus, select:focus { outline: none; border-color: var(--grad-via); background: white; }
-  select { cursor: pointer; }
-
-  /* Footer */
-  .footer-card {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 16px 22px;
+    border: 1.5px solid rgba(122, 142, 107, 0.25);
+    background: rgba(255,255,255,0.5);
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--sage-dark);
     text-align: center;
-    padding: 28px 24px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .rsvp-name:focus { outline: none; border-color: var(--sage-dark); }
+  .submit-btn {
     margin-top: 24px;
-    color: rgba(255,255,255,0.7);
-  }
-  .footer-card .heart {
-    font-size: 24px;
-    margin-bottom: 8px;
-  }
-  .footer-card .sig {
-    font-weight: 700;
-    font-size: 16px;
+    background: var(--sage-dark);
     color: white;
-    letter-spacing: 0.04em;
+    border: none;
+    border-radius: 999px;
+    padding: 18px 60px;
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(74, 93, 63, 0.3);
+    transition: transform 0.25s;
   }
-  .footer-card .small {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
+  .submit-btn:hover { transform: translateY(-2px); }
+
+  /* COUNTDOWN */
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .count-cell {
+    text-align: center;
+    min-width: 56px;
+  }
+  .count-cell .n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    color: var(--sage-dark);
+    line-height: 1;
+    font-weight: 500;
+  }
+  .count-cell .u {
+    font-family: 'Marcellus', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
     margin-top: 4px;
   }
 
-  /* Decorative SVG ribbon */
-  .ribbon {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    font-size: 11px;
-    background: linear-gradient(135deg, var(--grad-soft-1), var(--grad-soft-2));
-    color: var(--grad-via);
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+  /* Footer */
+  .footer-note {
+    text-align: center;
+    padding: 40px 24px 30px;
+    color: var(--muted);
+    font-family: 'Marcellus', serif;
+    letter-spacing: 0.3em;
+    font-size: 12px;
+    text-transform: uppercase;
   }
 
-  /* Animations */
-  @keyframes floaty {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-  .float { animation: floaty 3s ease-in-out infinite; }
-
-  /* Reveal on scroll */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s, transform 0.6s;
-  }
-  .reveal.in {
-    opacity: 1;
-    transform: translateY(0);
+  /* Snap scroll on mobile */
+  @media (max-width: 768px) {
+    html { scroll-snap-type: y mandatory; }
+    .page {
+      min-height: 100vh;
+      min-height: 100dvh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 24px 80px;
+    }
+    .container { padding: 0; max-width: none; }
+    .top-bar { position: fixed; }
   }
 </style>
 </head>
 <body>
 
-<header class="top-bar">
-  <div class="top-bar-inner">
-    <div class="brand">
-      <span class="dot">💍</span>
-      <span>А &amp; Д</span>
-    </div>
-    <div class="meta">26.07.2026 · Алматы</div>
-  </div>
-</header>
+<div class="top-bar">
+  <button class="back-btn" onclick="history.length > 1 ? history.back() : window.scrollTo({top:0,behavior:'smooth'})" aria-label="Артқа">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"/></svg>
+    <span>Артқа</span>
+  </button>
+</div>
 
-<main class="container">
+<!-- Reusable floral garland SVG (white roses + sage leaves) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="garland" viewBox="0 0 800 180">
+      <!-- backdrop leaves -->
+      <g fill="#94a988" stroke="#4a5d3f" stroke-width="0.6" opacity="0.85">
+        <path d="M60 60 Q40 30 30 10 Q70 18 80 50 Z"/>
+        <path d="M120 50 Q100 20 90 0 Q140 10 150 45 Z"/>
+        <path d="M200 65 Q180 30 170 5 Q230 15 240 55 Z"/>
+        <path d="M280 50 Q260 20 250 0 Q310 8 320 45 Z"/>
+        <path d="M380 70 Q360 30 350 5 Q420 15 420 60 Z"/>
+        <path d="M460 50 Q440 20 430 0 Q490 10 500 45 Z"/>
+        <path d="M540 65 Q520 30 510 5 Q570 12 580 55 Z"/>
+        <path d="M620 50 Q600 20 590 0 Q650 8 660 45 Z"/>
+        <path d="M700 70 Q680 30 670 5 Q740 15 740 60 Z"/>
+        <path d="M30 110 Q10 90 0 70 Q40 75 60 100 Z"/>
+        <path d="M740 110 Q720 90 770 70 Q780 95 770 115 Z"/>
+      </g>
+      <!-- darker leaves overlay -->
+      <g fill="#6f8262" stroke="#3d4f33" stroke-width="0.5" opacity="0.7">
+        <path d="M80 80 Q60 60 55 35 Q95 45 100 75 Z"/>
+        <path d="M160 70 Q140 40 135 15 Q175 30 180 60 Z"/>
+        <path d="M240 85 Q220 55 215 30 Q260 45 265 75 Z"/>
+        <path d="M340 90 Q320 60 315 35 Q360 50 365 80 Z"/>
+        <path d="M440 85 Q420 55 415 30 Q460 45 465 75 Z"/>
+        <path d="M520 80 Q500 50 495 25 Q545 40 550 70 Z"/>
+        <path d="M600 90 Q580 60 575 35 Q620 50 625 80 Z"/>
+        <path d="M680 80 Q660 50 655 25 Q705 40 710 70 Z"/>
+      </g>
+      <!-- white roses (stylized) -->
+      <g>
+        <!-- rose 1 -->
+        <g transform="translate(110 95)">
+          <circle r="38" fill="#fafaf2"/>
+          <circle r="38" fill="none" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-28 -8 Q-30 -28 -8 -34 Q12 -36 22 -22 Q30 -6 22 12 Q10 26 -10 24 Q-26 16 -28 -8 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <path d="M-18 -2 Q-14 -22 0 -22 Q16 -20 18 -4 Q16 12 0 14 Q-16 12 -18 -2 Z" fill="#fcfaf2" stroke="#d9d2bd" stroke-width="0.5"/>
+          <path d="M-10 0 Q-6 -14 0 -14 Q10 -12 10 0 Q8 8 0 8 Q-8 6 -10 0 Z" fill="#f8f3e3" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="3" fill="#e8dfc8"/>
+        </g>
+        <!-- rose 2 -->
+        <g transform="translate(280 70)">
+          <circle r="32" fill="#fafaf2"/>
+          <circle r="32" fill="none" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-24 -6 Q-26 -24 -6 -28 Q12 -30 20 -18 Q26 -4 18 12 Q8 22 -10 20 Q-22 12 -24 -6 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <path d="M-14 0 Q-10 -18 0 -18 Q12 -16 14 -2 Q12 10 0 12 Q-12 10 -14 0 Z" fill="#fcfaf2" stroke="#d9d2bd" stroke-width="0.5"/>
+          <circle r="2.5" fill="#e8dfc8"/>
+        </g>
+        <!-- rose 3 -->
+        <g transform="translate(420 100)">
+          <circle r="42" fill="#fafaf2"/>
+          <circle r="42" fill="none" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-32 -10 Q-34 -30 -10 -36 Q14 -38 26 -22 Q34 -4 26 14 Q12 28 -10 26 Q-30 16 -32 -10 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <path d="M-20 -4 Q-16 -24 0 -24 Q18 -22 20 -6 Q18 12 0 14 Q-18 12 -20 -4 Z" fill="#fcfaf2" stroke="#d9d2bd" stroke-width="0.5"/>
+          <path d="M-12 0 Q-8 -16 0 -16 Q12 -14 12 0 Q10 10 0 10 Q-10 8 -12 0 Z" fill="#f8f3e3" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="3.5" fill="#e8dfc8"/>
+        </g>
+        <!-- rose 4 -->
+        <g transform="translate(580 75)">
+          <circle r="34" fill="#fafaf2"/>
+          <circle r="34" fill="none" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-26 -8 Q-28 -26 -8 -30 Q12 -32 20 -20 Q28 -4 20 14 Q10 24 -10 22 Q-24 14 -26 -8 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <path d="M-16 0 Q-12 -20 0 -20 Q14 -18 16 -2 Q14 12 0 14 Q-14 12 -16 0 Z" fill="#fcfaf2" stroke="#d9d2bd" stroke-width="0.5"/>
+          <circle r="3" fill="#e8dfc8"/>
+        </g>
+        <!-- small buds -->
+        <g transform="translate(50 130)">
+          <circle r="14" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="6" fill="#f3eee0"/>
+        </g>
+        <g transform="translate(720 125)">
+          <circle r="16" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="7" fill="#f3eee0"/>
+        </g>
+        <g transform="translate(360 140)">
+          <circle r="12" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="5" fill="#f3eee0"/>
+        </g>
+      </g>
+      <!-- accent small leaves -->
+      <g fill="#7a8e6b" opacity="0.85">
+        <ellipse cx="160" cy="120" rx="8" ry="3" transform="rotate(-30 160 120)"/>
+        <ellipse cx="320" cy="125" rx="9" ry="3" transform="rotate(40 320 125)"/>
+        <ellipse cx="500" cy="130" rx="9" ry="3" transform="rotate(-30 500 130)"/>
+        <ellipse cx="650" cy="120" rx="8" ry="3" transform="rotate(35 650 120)"/>
+      </g>
+    </symbol>
 
-  <!-- HERO -->
-  <section class="card hero reveal">
-    <div class="card-corner-glow"></div>
-    <span class="badge">✨ Үйлену тойы</span>
-    <h1>Абылбек<span class="amp">&amp;</span>Даяна</h1>
-    <div class="date">26 ШІЛДЕ · 2026</div>
-    <div class="city">Aisultan Plaza · Алматы</div>
-    <div class="countdown">
-      <div class="count-cell"><div class="n" id="d">0</div><div class="u">күн</div></div>
-      <div class="count-cell"><div class="n" id="h">0</div><div class="u">сағат</div></div>
-      <div class="count-cell"><div class="n" id="m">0</div><div class="u">минут</div></div>
-      <div class="count-cell"><div class="n" id="s">0</div><div class="u">секунд</div></div>
+    <symbol id="corner-bouquet" viewBox="0 0 220 220">
+      <!-- big bouquet for corner -->
+      <g fill="#7a8e6b" stroke="#3d4f33" stroke-width="0.6" opacity="0.9">
+        <path d="M90 200 Q70 170 50 150 Q40 180 60 210 Z"/>
+        <path d="M120 210 Q110 175 100 150 Q140 165 145 200 Z"/>
+        <path d="M70 170 Q40 150 20 130 Q40 170 60 190 Z"/>
+        <path d="M155 175 Q170 145 195 130 Q190 165 175 195 Z"/>
+        <path d="M130 145 Q120 110 110 80 Q150 110 155 145 Z"/>
+      </g>
+      <g fill="#94a988" opacity="0.7">
+        <path d="M50 180 Q30 150 25 120 Q60 140 65 175 Z"/>
+        <path d="M170 180 Q190 150 195 115 Q160 140 155 175 Z"/>
+        <path d="M30 200 Q5 180 0 145 Q35 165 45 195 Z"/>
+        <path d="M190 200 Q215 180 220 145 Q185 165 175 195 Z"/>
+      </g>
+      <!-- white roses -->
+      <g>
+        <g transform="translate(75 180)">
+          <circle r="28" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-20 -6 Q-22 -22 -4 -26 Q12 -28 18 -16 Q22 -2 16 10 Q6 18 -8 16 Q-18 10 -20 -6 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <path d="M-12 0 Q-8 -16 0 -16 Q10 -14 12 -2 Q10 8 0 10 Q-10 8 -12 0 Z" fill="#fcfaf2" stroke="#d9d2bd" stroke-width="0.5"/>
+          <circle r="2.5" fill="#e8dfc8"/>
+        </g>
+        <g transform="translate(140 180)">
+          <circle r="32" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-24 -8 Q-26 -24 -6 -28 Q12 -30 20 -18 Q26 -4 18 12 Q8 22 -10 20 Q-22 12 -24 -8 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <path d="M-14 -2 Q-10 -20 0 -20 Q14 -18 16 -4 Q14 10 0 12 Q-14 10 -14 -2 Z" fill="#fcfaf2" stroke="#d9d2bd" stroke-width="0.5"/>
+          <circle r="3" fill="#e8dfc8"/>
+        </g>
+        <g transform="translate(110 130)">
+          <circle r="22" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.6"/>
+          <path d="M-16 -4 Q-18 -18 -4 -20 Q10 -22 14 -10 Q18 0 12 10 Q4 16 -6 14 Q-14 10 -16 -4 Z" fill="#f3eee0" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="2" fill="#e8dfc8"/>
+        </g>
+        <g transform="translate(40 150)">
+          <circle r="14" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="5" fill="#f3eee0"/>
+        </g>
+        <g transform="translate(180 150)">
+          <circle r="16" fill="#fafaf2" stroke="#cfc7b3" stroke-width="0.5"/>
+          <circle r="6" fill="#f3eee0"/>
+        </g>
+      </g>
+    </symbol>
+
+    <symbol id="rings" viewBox="0 0 130 80">
+      <!-- two gold wedding rings -->
+      <ellipse cx="50" cy="38" rx="28" ry="26" fill="none" stroke="#c9a96e" stroke-width="4"/>
+      <ellipse cx="50" cy="38" rx="28" ry="26" fill="none" stroke="#a6864f" stroke-width="1" opacity="0.6"/>
+      <ellipse cx="80" cy="42" rx="28" ry="26" fill="none" stroke="#c9a96e" stroke-width="4"/>
+      <ellipse cx="80" cy="42" rx="28" ry="26" fill="none" stroke="#a6864f" stroke-width="1" opacity="0.6"/>
+      <!-- laurel under -->
+      <g fill="#7a8e6b" opacity="0.85">
+        <path d="M20 68 Q14 64 10 58 Q18 60 22 66 Z"/>
+        <path d="M28 72 Q20 68 16 62 Q26 64 30 70 Z"/>
+        <path d="M38 73 Q30 70 26 64 Q36 66 40 72 Z"/>
+        <path d="M110 68 Q116 64 120 58 Q112 60 108 66 Z"/>
+        <path d="M102 72 Q110 68 114 62 Q104 64 100 70 Z"/>
+        <path d="M92 73 Q100 70 104 64 Q94 66 90 72 Z"/>
+        <path d="M50 76 Q60 78 65 76 Q70 78 80 76" stroke="#4a5d3f" stroke-width="0.8" fill="none"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="container">
+
+  <!-- COVER -->
+  <section class="page cream cover">
+    <svg class="garland-top"><use href="#garland"/></svg>
+    <svg class="garland-bottom"><use href="#garland"/></svg>
+    <div class="label">Үйлену тойына шақыру</div>
+    <svg class="rings" viewBox="0 0 130 80"><use href="#rings"/></svg>
+    <div class="names">
+      Абылбек
+      <span class="amp">&amp;</span>
+      Даяна
     </div>
+    <div class="date-line">26 шілде · 2026</div>
   </section>
 
   <!-- GREETING -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble float">💌</div>
-    <h2 class="card-title">Қымбатты қонақтар!</h2>
-    <p class="invite-text">
+  <section class="page sage greeting-page">
+    <svg class="corner-floral bl"><use href="#corner-bouquet"/></svg>
+    <svg class="corner-floral tr"><use href="#corner-bouquet"/></svg>
+    <h2>Құрметті қонақтар!</h2>
+    <p class="invite-body">
       Зор қуанышпен және үлкен сүйіспеншілікпен өміріміздің маңызды әрі әсерлі сәтін бізбен бөлісуге шақырамыз.
     </p>
+    <p class="invite-body" style="margin-top: 18px;">
+      Сіздердің қатысуыңыз бұл күнді тағы да ерекше етеді.
+    </p>
+    <div class="signature">Құрметпен,</div>
+    <div class="signature-names">Абылбек &amp; Даяна</div>
   </section>
 
-  <!-- DATE / CALENDAR -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble">📅</div>
-    <h2 class="card-title">Шілденің 26-сы</h2>
-    <p class="card-sub">Жексенбі · 2026</p>
-    <div class="calendar">
-      <div class="dow">дс</div><div class="dow">сс</div><div class="dow">ср</div><div class="dow">бс</div><div class="dow">жм</div><div class="dow">сб</div><div class="dow">жс</div>
-      <div class="day dim">20</div>
-      <div class="day dim">21</div>
-      <div class="day dim">22</div>
-      <div class="day dim">23</div>
-      <div class="day dim">24</div>
-      <div class="day dim">25</div>
-      <div class="day mark">26</div>
+  <!-- DATE -->
+  <section class="page cream date-page">
+    <svg class="garland-top"><use href="#garland"/></svg>
+    <svg class="corner-floral bl"><use href="#corner-bouquet"/></svg>
+    <div class="month">Шілде</div>
+    <div class="date-row">
+      <span>24</span>
+      <span>25</span>
+      <span class="focus">26</span>
+      <span>27</span>
+      <span>28</span>
     </div>
-    <p class="cal-caption">Бұл күн біз үшін <strong>ерекше</strong> болады</p>
+    <div class="clock"><span class="hand">сағат</span>17:00</div>
+    <div class="year">2026</div>
+    <div class="dow-list">
+      <div class="dow">Сәрсенбі</div>
+      <div class="dow">Бейсенбі</div>
+      <div class="dow">Жұма</div>
+      <div class="dow">Сенбі</div>
+      <div class="dow active">Жексенбі</div>
+      <div class="dow">Дүйсенбі</div>
+      <div class="dow">Сейсенбі</div>
+    </div>
+    <div class="countdown" id="countdown">
+      <div class="count-cell"><div class="n" id="d">0</div><div class="u">күн</div></div>
+      <div class="count-cell"><div class="n" id="h">0</div><div class="u">сағат</div></div>
+      <div class="count-cell"><div class="n" id="m">0</div><div class="u">минут</div></div>
+    </div>
   </section>
 
   <!-- PLACE -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble">📍</div>
-    <h2 class="card-title">Мекен-жай</h2>
-    <p class="card-sub">Той өтетін орын</p>
-    <div class="place-name">Aisultan Plaza</div>
-    <div class="place-city">Алматы қаласы</div>
-    <a class="btn-grad" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener">
-      <span>Картадан көру</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  <section class="page sage place-page">
+    <svg class="corner-floral tr"><use href="#corner-bouquet"/></svg>
+    <svg class="corner-floral bl"><use href="#corner-bouquet"/></svg>
+    <div class="label">Той жайлы</div>
+    <div class="place-img">
+      <svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="placeBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#dfe5d0"/>
+            <stop offset="100%" stop-color="#b3c0a0"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="240" fill="url(#placeBg)"/>
+        <!-- arched windows -->
+        <g fill="#fff" opacity="0.85">
+          <path d="M70 60 Q70 30 100 30 Q130 30 130 60 L130 200 L70 200 Z"/>
+          <path d="M170 70 Q170 40 200 40 Q230 40 230 70 L230 200 L170 200 Z" opacity="0.9"/>
+          <path d="M270 60 Q270 30 300 30 Q330 30 330 60 L330 200 L270 200 Z"/>
+        </g>
+        <!-- curtain drapes -->
+        <g fill="#7a8e6b" opacity="0.75">
+          <path d="M60 60 Q50 110 65 160 Q75 195 60 220 L80 220 Q90 180 85 130 Q80 90 80 60 Z"/>
+          <path d="M120 60 Q130 110 115 160 Q105 195 120 220 L100 220 Q90 180 95 130 Q100 90 100 60 Z" opacity="0.85"/>
+          <path d="M160 70 Q150 120 165 170 Q175 200 160 220 L180 220 Q190 180 185 140 Q180 100 180 70 Z"/>
+          <path d="M220 70 Q230 120 215 170 Q205 200 220 220 L200 220 Q190 180 195 140 Q200 100 200 70 Z" opacity="0.85"/>
+          <path d="M260 60 Q250 110 265 160 Q275 195 260 220 L280 220 Q290 180 285 130 Q280 90 280 60 Z"/>
+          <path d="M320 60 Q330 110 315 160 Q305 195 320 220 L300 220 Q290 180 295 130 Q300 90 300 60 Z" opacity="0.85"/>
+        </g>
+        <!-- small table & chairs -->
+        <g fill="#5d6f53" opacity="0.6">
+          <ellipse cx="200" cy="185" rx="32" ry="5"/>
+          <rect x="198" y="160" width="4" height="25"/>
+          <ellipse cx="200" cy="155" rx="22" ry="4"/>
+        </g>
+        <!-- plant -->
+        <g fill="#5d6f53" opacity="0.7">
+          <path d="M150 175 Q140 150 145 130 Q155 145 152 175 Z"/>
+          <path d="M155 175 Q165 150 165 130 Q160 145 158 175 Z"/>
+          <rect x="148" y="175" width="14" height="14" fill="#cdb98a"/>
+        </g>
+      </svg>
+    </div>
+    <div class="place-city">Алматы</div>
+    <div class="place-venue">Aisultan Plaza</div>
+    <a class="map-btn" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener">
+      <span>Карта арқылы ашу</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
     </a>
   </section>
 
   <!-- PROGRAM -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble">🎊</div>
-    <h2 class="card-title">Бағдарлама</h2>
-    <p class="card-sub">Қарашылдар үшін кесте</p>
-    <div class="program-list">
-      <div class="program-item">
-        <div class="em">🥂</div>
-        <div class="info">
-          <div class="t">17:00</div>
-          <div class="l">Қонақтарды қарсы алу</div>
-        </div>
-      </div>
-      <div class="program-item">
-        <div class="em">👰</div>
-        <div class="info">
-          <div class="t">18:00</div>
-          <div class="l">Беташар</div>
-        </div>
-      </div>
-      <div class="program-item">
-        <div class="em">🍽️</div>
-        <div class="info">
-          <div class="t">19:00</div>
-          <div class="l">Той дастарханы</div>
-        </div>
-      </div>
+  <section class="page cream program-page">
+    <svg class="garland-top"><use href="#garland"/></svg>
+    <svg class="corner-floral bl"><use href="#corner-bouquet"/></svg>
+    <h2>Бағдарлама</h2>
+    <div class="program-item">
+      <div class="time">17:00</div>
+      <div class="name">Қонақтарды қарсы алу</div>
+    </div>
+    <div class="program-item">
+      <div class="time">18:00</div>
+      <div class="name">Беташар</div>
+    </div>
+    <div class="program-item">
+      <div class="time">19:00</div>
+      <div class="name">Той дастарханы</div>
     </div>
   </section>
 
   <!-- DRESS CODE -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble">👗</div>
-    <h2 class="card-title">Дресс-код</h2>
-    <p class="card-sub">Біз үшін ең бастысы — сіз!</p>
-    <p class="dress-text">
-      Дегенмен, ханымдар пастельді түсті көйлек, ал мырзалар классикалық костюм немесе көйлекпен костюм киіп келсе, қуанышты боламыз.
+  <section class="page sage dress-page">
+    <svg class="corner-floral tr"><use href="#corner-bouquet"/></svg>
+    <svg class="corner-floral bl"><use href="#corner-bouquet"/></svg>
+    <h2>Дресс-код</h2>
+    <p class="dress-text">Біз үшін ең бастысы — сіз!</p>
+    <p class="dress-text" style="font-size:16px; opacity:0.9;">
+      Дегенмен, ханымдар пастельді түсті көйлек, ал мырзалар классикалық костюм киіп келсе, қуанышты боламыз.
     </p>
-    <div class="palette">
+    <div class="palette" style="margin-top:32px;">
       <div class="swatch" style="background:#9eb38b"></div>
       <div class="swatch" style="background:#e8a87c"></div>
       <div class="swatch" style="background:#e89b9b"></div>
@@ -597,84 +813,48 @@
     </div>
   </section>
 
-  <!-- NOTE -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble">🎀</div>
-    <h2 class="card-title">Ескертпе</h2>
-    <p class="note-text">
-      Сізді және жақындарыңызды күтеміз. Әр қонақ үшін бұл күнді ерекше ету мақсатында, келетініңізді алдын ала растауыңызды сұраймыз.
-    </p>
-  </section>
-
   <!-- RSVP -->
-  <section class="card reveal">
-    <div class="card-corner-glow"></div>
-    <div class="icon-bubble">✉️</div>
-    <h2 class="card-title">Бізбен боласыз ба?</h2>
-    <p class="card-sub">1 шілдеге дейін жауап беруіңізді сұраймыз</p>
+  <section class="page cream rsvp-page">
+    <svg class="garland-top"><use href="#garland"/></svg>
+    <svg class="corner-floral bl"><use href="#corner-bouquet"/></svg>
+    <h2>Құрметті қонақ,<br>тойға келуіңізді<br>растауыңызды сұраймыз</h2>
     <form action="https://formspree.io/f/ТВОЙ_ID" method="POST">
-      <div class="field">
-        <label>Атыңыз</label>
-        <input type="text" name="name" placeholder="Толық атыңыз" required>
+      <input class="rsvp-name" type="text" name="name" placeholder="Атыңыз" required>
+      <div class="rsvp-options" style="margin-top:16px;">
+        <label class="rsvp-opt">
+          <input type="radio" name="attendance" value="alone" required>
+          <span class="radio"></span>
+          <span>Иә, жалғыз өзім барамын</span>
+        </label>
+        <label class="rsvp-opt">
+          <input type="radio" name="attendance" value="couple">
+          <span class="radio"></span>
+          <span>Жұбайыммен бірге барамын</span>
+        </label>
+        <label class="rsvp-opt">
+          <input type="radio" name="attendance" value="no">
+          <span class="radio"></span>
+          <span>Өкінішке орай, келе алмаймын</span>
+        </label>
       </div>
-      <div class="field">
-        <label>Қатысу</label>
-        <select name="attendance" required>
-          <option value="">Келе аласыз ба?</option>
-          <option value="yes">Иә, келемін</option>
-          <option value="no">Өкінішке орай, жоқ</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Қонақтар саны</label>
-        <input type="number" name="guests" placeholder="1" min="1" max="10">
-      </div>
-      <button class="btn-grad" type="submit">
-        <span>Жіберу</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-      </button>
+      <button class="submit-btn" type="submit">Жауап беру</button>
     </form>
   </section>
 
-  <!-- FOOTER -->
-  <div class="footer-card">
-    <div class="heart">💗</div>
-    <div class="sig">Абылбек &amp; Даяна</div>
-    <div class="small">26.07.2026 · Aisultan Plaza, Алматы</div>
-  </div>
+  <div class="footer-note">А &amp; Д · 26.07.2026</div>
 
-</main>
+</div>
 
 <script>
-  // Countdown
   const target = new Date('2026-07-26T17:00:00+05:00').getTime();
   function tick() {
     const diff = target - Date.now();
-    if (diff < 0) {
-      document.getElementById('d').textContent = '0';
-      document.getElementById('h').textContent = '0';
-      document.getElementById('m').textContent = '0';
-      document.getElementById('s').textContent = '0';
-      return;
-    }
+    if (diff < 0) return;
     document.getElementById('d').textContent = Math.floor(diff / 86400000);
     document.getElementById('h').textContent = Math.floor(diff / 3600000) % 24;
     document.getElementById('m').textContent = Math.floor(diff / 60000) % 60;
-    document.getElementById('s').textContent = Math.floor(diff / 1000) % 60;
   }
   tick(); setInterval(tick, 1000);
-
-  // Reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
 </body>

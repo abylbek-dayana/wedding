@@ -28,8 +28,6 @@
     min-height: 100vh;
     padding: 24px 16px;
   }
-  .script { font-family: 'Marck Script', cursive; color: var(--red); font-weight: 400; }
-  .hand { font-family: 'Caveat', cursive; }
 
   .stage {
     max-width: 480px;
@@ -40,19 +38,18 @@
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(0,0,0,0.25);
   }
-  .corner { position: absolute; width: 90px; height: 90px; pointer-events: none; }
+  .corner { position: absolute; width: 90px; height: 90px; pointer-events: none; z-index: 2; }
   .corner svg { width: 100%; height: 100%; display: block; }
   .corner.tl { top: 8px; left: 8px; }
   .corner.tr { top: 8px; right: 8px; transform: scaleX(-1); }
   .corner.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
   .corner.br { bottom: 8px; right: 8px; transform: scale(-1, -1); }
 
-  section {
-    padding: 32px 28px;
+  .page {
+    padding: 40px 28px;
     position: relative;
     text-align: center;
   }
-  section + section { padding-top: 8px; }
 
   .hero { padding-top: 48px; padding-bottom: 24px; }
   .hero .names {
@@ -71,13 +68,13 @@
   .hero-illustration svg { width: 100%; height: 100%; }
 
   .greeting {
-    text-align: left;
-    padding: 24px 32px 8px;
+    text-align: center;
     color: var(--ink);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.55;
+    margin-top: 18px;
   }
-  .greeting p + p { margin-top: 10px; }
+  .greeting p + p { margin-top: 8px; }
 
   .month-title {
     font-family: 'Marck Script', cursive;
@@ -106,13 +103,14 @@
     transform: rotate(-8deg) scale(1.05, 0.95);
     pointer-events: none;
   }
-
   .invite-text {
-    text-align: left;
-    padding: 24px 32px 8px;
     color: var(--ink);
     font-size: 14px;
     line-height: 1.55;
+    margin-top: 24px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .place-illust { margin: 16px auto 0; width: 280px; height: 90px; }
@@ -146,30 +144,28 @@
 
   .timing-item { margin: 18px auto 0; max-width: 320px; }
   .timing-item .time { font-family: 'Caveat', cursive; font-size: 22px; color: var(--ink); }
-  .timing-item .icon { width: 140px; height: 100px; margin: 8px auto 0; }
+  .timing-item .icon { width: 130px; height: 90px; margin: 6px auto 0; }
   .timing-item .icon svg { width: 100%; height: 100%; }
 
-  .dress { padding-top: 24px; }
-  .dress p { text-align: left; font-size: 14px; line-height: 1.55; color: var(--ink); margin-top: 8px; }
+  .dress p { text-align: left; font-size: 14px; line-height: 1.55; color: var(--ink); margin-top: 8px; max-width: 380px; margin-left: auto; margin-right: auto; }
   .dress p.center { text-align: center; }
-  .palette { display: flex; justify-content: center; gap: 12px; margin-top: 22px; }
+  .palette { display: flex; justify-content: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
   .swatch { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.08); }
 
-  .note { padding-top: 32px; }
   .note .bow { width: 60px; height: 40px; margin: 0 auto 12px; }
   .note .bow svg { width: 100%; height: 100%; }
   .note .box {
     border-top: 1px solid var(--red-soft);
     border-bottom: 1px solid var(--red-soft);
     padding: 18px 4px;
-    margin-top: 8px;
+    margin: 8px auto 0;
     text-align: left;
     font-size: 13.5px;
     line-height: 1.6;
     color: var(--ink);
+    max-width: 380px;
   }
 
-  .rsvp { padding-top: 32px; padding-bottom: 16px; }
   form { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; max-width: 340px; margin-left: auto; margin-right: auto; }
   input, select {
     padding: 12px 14px;
@@ -184,28 +180,70 @@
   form .btn { width: 100%; border-color: var(--red); color: var(--red); }
   form .btn:hover { background: var(--red); color: var(--card); }
 
-  .countdown { display: flex; justify-content: center; gap: 18px; margin-top: 16px; }
+  .countdown { display: flex; justify-content: center; gap: 18px; margin-top: 24px; }
   .countdown div { min-width: 52px; }
   .countdown .num { font-family: 'Marck Script', cursive; font-size: 36px; color: var(--red); line-height: 1; }
   .countdown .unit { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
-  .footer-flower { width: 70px; height: 80px; margin: 30px auto 8px; }
+  .footer-flower { width: 70px; height: 80px; margin: 26px auto 8px; }
   .footer-flower svg { width: 100%; height: 100%; }
-  footer {
+  .signature {
     text-align: center;
-    padding: 0 24px 32px;
     font-family: 'Caveat', cursive;
     color: var(--muted);
     font-size: 18px;
+    margin-top: 4px;
   }
 
-  .doodle { position: absolute; pointer-events: none; opacity: 0.85; }
-  .doodle svg { width: 100%; height: 100%; display: block; }
-  .doodle.heart-1 { width: 22px; height: 22px; top: 220px; right: 28px; }
-  .doodle.heart-2 { width: 18px; height: 18px; top: 360px; left: 32px; }
-  .doodle.spark-1 { width: 24px; height: 24px; top: 90px; right: 36px; }
-  .doodle.spark-2 { width: 20px; height: 20px; bottom: 280px; right: 22px; }
-  .doodle.spark-3 { width: 18px; height: 18px; top: 180px; left: 22px; }
+  /* scroll snap on phones */
+  @media (max-width: 768px) {
+    html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+    body { padding: 0; background: var(--card); }
+    .stage {
+      max-width: none;
+      border-radius: 0;
+      box-shadow: none;
+      margin: 0;
+      overflow: visible;
+    }
+    .corner { display: none; }
+    .page {
+      min-height: 100vh;
+      min-height: 100dvh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 22px;
+      position: relative;
+      border-bottom: 1px dashed rgba(196, 69, 54, 0.18);
+    }
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      transform: translateX(-50%);
+      opacity: 0.35;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' fill='none' stroke='%233a6a8a' stroke-width='1.4' stroke-linecap='round'><path d='M15 6 L15 24 M6 15 L24 15 M9 9 L21 21 M9 21 L21 9'/></svg>");
+    }
+    .page::before { top: 14px; }
+    .page::after { bottom: 14px; }
+    .page:last-child { border-bottom: none; }
+    .page:last-child::after { display: none; }
+    .page:first-child::before { display: none; }
+    .hero { padding-top: 48px; }
+  }
+
+  @media (min-width: 769px) {
+    .page + .page { padding-top: 8px; }
+  }
 </style>
 </head>
 <body>
@@ -245,40 +283,12 @@
     </svg>
   </div>
 
-  <div class="doodle heart-1">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#3a6a8a" stroke-width="1.4" stroke-linecap="round">
-      <path d="M12 20 C 6 14 2 11 4 7 C 6 3 10 4 12 8 C 14 4 18 3 20 7 C 22 11 18 14 12 20 Z"/>
-    </svg>
-  </div>
-  <div class="doodle heart-2">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#3a6a8a" stroke-width="1.4" stroke-linecap="round">
-      <path d="M12 20 C 6 14 2 11 4 7 C 6 3 10 4 12 8 C 14 4 18 3 20 7 C 22 11 18 14 12 20 Z"/>
-    </svg>
-  </div>
-  <div class="doodle spark-1">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#3a6a8a" stroke-width="1.2" stroke-linecap="round">
-      <path d="M12 2 L12 9 M12 15 L12 22 M2 12 L9 12 M15 12 L22 12"/>
-      <path d="M5 5 L8 8 M16 16 L19 19 M5 19 L8 16 M16 8 L19 5"/>
-    </svg>
-  </div>
-  <div class="doodle spark-2">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#3a6a8a" stroke-width="1.2" stroke-linecap="round">
-      <path d="M12 4 L12 20 M4 12 L20 12 M6 6 L18 18 M6 18 L18 6"/>
-    </svg>
-  </div>
-  <div class="doodle spark-3">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#3a6a8a" stroke-width="1.2" stroke-linecap="round">
-      <path d="M12 2 L12 22 M2 12 L22 12"/>
-    </svg>
-  </div>
-
-  <section class="hero">
+  <!-- PAGE 1: HERO -->
+  <section class="page hero">
     <div class="names">Абылбек және Даяна<br><span style="font-size:0.7em">26.07.2026</span></div>
     <div class="hero-illustration">
       <svg viewBox="0 0 220 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M110 220 C 30 160 -5 100 25 60 C 50 30 90 40 110 80 C 130 40 170 30 195 60 C 225 100 190 160 110 220 Z"
-              fill="#c44536"/>
-
+        <path d="M110 220 C 30 160 -5 100 25 60 C 50 30 90 40 110 80 C 130 40 170 30 195 60 C 225 100 190 160 110 220 Z" fill="#c44536"/>
         <g stroke="#3a6a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M62 112 L54 205 L74 208 L82 205 L94 205 L90 112 Q76 104 62 112 Z" fill="#3a6a8a" stroke="#3a6a8a"/>
           <path d="M74 112 L78 134 L82 112 Z" fill="#f7ecd6" stroke="#f7ecd6"/>
@@ -291,7 +301,6 @@
           <path d="M46 88 Q40 82 46 78 Q52 76 54 82 Q60 84 56 92 Z" fill="#f7ecd6"/>
           <path d="M92 118 Q98 150 94 190" fill="none" stroke-opacity="0.4"/>
         </g>
-
         <g stroke="#3a6a8a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M128 96 Q108 140 118 208 L130 208 Q126 160 134 110 Z" fill="#f7ecd6" stroke="#f7ecd6"/>
           <path d="M160 96 Q180 140 170 208 L158 208 Q162 160 154 110 Z" fill="#f7ecd6" stroke="#f7ecd6"/>
@@ -311,14 +320,14 @@
         </g>
       </svg>
     </div>
+    <div class="greeting">
+      <p>Қымбатты қонақтар!</p>
+      <p>Жақын арада біз үшін ерекше күн келеді.</p>
+    </div>
   </section>
 
-  <div class="greeting">
-    <p>Қымбатты қонақтар!</p>
-    <p>Жақын арада біз үшін ерекше күн келеді.</p>
-  </div>
-
-  <section>
+  <!-- PAGE 2: DATE -->
+  <section class="page">
     <div class="month-title">Шілде</div>
     <div class="calendar">
       <div class="dow">дс</div><div class="dow">сс</div><div class="dow">ср</div><div class="dow">бс</div><div class="dow">жм</div><div class="dow">сб</div><div class="dow">жс</div>
@@ -331,13 +340,13 @@
       <div class="num mark">26</div>
     </div>
     <div style="margin-top:14px; color: var(--muted); font-size: 12px; letter-spacing: 0.08em;">жексенбі · 26 шілде 2026</div>
+    <div class="invite-text">
+      <p>Зор қуанышпен және үлкен сүйіспеншілікпен өміріміздің маңызды әрі әсерлі сәтін бізбен бөлісуге шақырамыз!</p>
+    </div>
   </section>
 
-  <div class="invite-text">
-    <p>Зор қуанышпен және үлкен сүйіспеншілікпен өміріміздің маңызды әрі әсерлі сәтін бізбен бөлісуге шақырамыз!</p>
-  </div>
-
-  <section>
+  <!-- PAGE 3: PLACE -->
+  <section class="page">
     <div class="place-illust">
       <svg viewBox="0 0 280 90" fill="none" stroke="#c44536" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
         <path d="M20 50 L260 50 L250 60 L30 60 Z" fill="#f7ecd6"/>
@@ -363,7 +372,8 @@
     <a class="btn" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener">Картаны ашу</a>
   </section>
 
-  <section>
+  <!-- PAGE 4: PROGRAM -->
+  <section class="page">
     <div class="section-title">Бағдарлама</div>
 
     <div class="timing-item">
@@ -419,7 +429,8 @@
     </div>
   </section>
 
-  <section class="dress">
+  <!-- PAGE 5: DRESS CODE -->
+  <section class="page dress">
     <div class="section-title">Дресс-код</div>
     <p class="center" style="margin-top:6px;">Біз үшін ең бастысы — сіз!</p>
     <p>Дегенмен, ханымдар пастельді түсті көйлек, ал мырзалар классикалық костюм немесе көйлекпен костюм киіп келсе, қуанышты боламыз.</p>
@@ -433,7 +444,8 @@
     </div>
   </section>
 
-  <section class="note">
+  <!-- PAGE 6: NOTE -->
+  <section class="page note">
     <div class="bow">
       <svg viewBox="0 0 60 40" fill="#c44536" stroke="#c44536" stroke-width="1" stroke-linejoin="round">
         <path d="M30 22 Q14 8 8 14 Q4 22 8 30 Q14 36 30 22 Z"/>
@@ -447,7 +459,8 @@
     </div>
   </section>
 
-  <section class="rsvp">
+  <!-- PAGE 7: RSVP -->
+  <section class="page rsvp">
     <div class="section-title">Бізбен боласыз ба?</div>
     <p style="color: var(--muted); font-size: 13px;">1 шілдеге дейін жауап беруіңізді сұраймыз</p>
     <form action="https://formspree.io/f/ТВОЙ_ID" method="POST">
@@ -460,28 +473,26 @@
       <input type="text" name="guests" placeholder="Қонақтар саны">
       <button class="btn" type="submit">Жіберу</button>
     </form>
-    <div class="countdown" id="countdown" style="margin-top:28px;">
+    <div class="countdown" id="countdown">
       <div><div class="num" id="d">0</div><div class="unit">күн</div></div>
       <div><div class="num" id="h">0</div><div class="unit">сағат</div></div>
       <div><div class="num" id="m">0</div><div class="unit">минут</div></div>
     </div>
+    <div class="footer-flower">
+      <svg viewBox="0 0 70 80" fill="none" stroke="#3a6a8a" stroke-width="1.2" stroke-linecap="round">
+        <path d="M35 78 L35 30"/>
+        <path d="M35 30 Q28 22 30 14 Q36 18 35 30"/>
+        <path d="M35 30 Q42 22 40 14 Q34 18 35 30"/>
+        <path d="M35 45 Q26 42 22 36 Q30 36 35 45"/>
+        <path d="M35 45 Q44 42 48 36 Q40 36 35 45"/>
+        <path d="M35 60 Q28 58 24 52 Q31 52 35 60"/>
+        <path d="M35 60 Q42 58 46 52 Q39 52 35 60"/>
+        <circle cx="30" cy="14" r="2" fill="#c44536" stroke="none"/>
+        <circle cx="40" cy="14" r="2" fill="#c44536" stroke="none"/>
+      </svg>
+    </div>
+    <div class="signature">А &amp; Д · 26.07.2026</div>
   </section>
-
-  <div class="footer-flower">
-    <svg viewBox="0 0 70 80" fill="none" stroke="#3a6a8a" stroke-width="1.2" stroke-linecap="round">
-      <path d="M35 78 L35 30"/>
-      <path d="M35 30 Q28 22 30 14 Q36 18 35 30"/>
-      <path d="M35 30 Q42 22 40 14 Q34 18 35 30"/>
-      <path d="M35 45 Q26 42 22 36 Q30 36 35 45"/>
-      <path d="M35 45 Q44 42 48 36 Q40 36 35 45"/>
-      <path d="M35 60 Q28 58 24 52 Q31 52 35 60"/>
-      <path d="M35 60 Q42 58 46 52 Q39 52 35 60"/>
-      <circle cx="30" cy="14" r="2" fill="#c44536" stroke="none"/>
-      <circle cx="40" cy="14" r="2" fill="#c44536" stroke="none"/>
-    </svg>
-  </div>
-
-  <footer>А &amp; Д · 26.07.2026</footer>
 
 </div>
 

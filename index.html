@@ -108,31 +108,41 @@
   .photos-wrap {
     position: relative;
     width: 100%;
-    height: 360px;
+    height: 380px;
     margin: 24px 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
   .photo {
-    position: absolute;
-    width: 160px;
-    height: 220px;
-    background: var(--paper);
-    border: 8px solid #fff;
-    box-shadow: 0 12px 26px rgba(0,0,0,0.18);
-    overflow: hidden;
-    border-radius: 4px;
+    position: relative;
+    width: 46%;
+    max-width: 200px;
+    height: 100%;
+    /* Red sketchy outline behind the cutout (like in reference) */
+    filter:
+      drop-shadow(2px 0 0 #b8362c)
+      drop-shadow(-2px 0 0 #b8362c)
+      drop-shadow(0 2px 0 #b8362c)
+      drop-shadow(0 -2px 0 #b8362c)
+      drop-shadow(3px 3px 0 #b8362c)
+      drop-shadow(-3px -3px 0 #b8362c)
+      drop-shadow(0 8px 16px rgba(0,0,0,0.18));
   }
-  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .photo.left { left: 8%; top: 30px; transform: rotate(-5deg); }
-  .photo.right { right: 8%; top: 50px; transform: rotate(4deg); }
+  .photo img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block; }
+  .photo.left { transform: rotate(-3deg) translateY(-10px); margin-right: -10px; z-index: 2; }
+  .photo.right { transform: rotate(3deg); z-index: 1; }
   .photo .placeholder {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
-    color: var(--muted);
+    color: var(--red);
     font-family: 'Caveat', cursive;
     font-size: 18px;
     text-align: center;
     padding: 10px;
-    background: linear-gradient(135deg, #ddc9a5, #c9b387);
+    background: rgba(255,255,255,0.3);
+    border: 2px dashed var(--red);
+    border-radius: 8px;
   }
 
   /* Floating hearts */
@@ -474,10 +484,10 @@
       <span class="heart h6"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
 
       <div class="photo left">
-        <img src="assets/abylbek-kid.jpg" alt="Абылбек" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Абылбек<br>(сақтаңыз: abylbek-kid.jpg)</div>'">
+        <img src="assets/abylbek-cut.png" alt="Абылбек" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Абылбек</div>'">
       </div>
       <div class="photo right">
-        <img src="assets/dayana-kid.jpg" alt="Даяна" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Даяна<br>(сақтаңыз: dayana-kid.jpg)</div>'">
+        <img src="assets/dayana-cut.png" alt="Даяна" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Даяна</div>'">
       </div>
     </div>
 

@@ -106,46 +106,29 @@
   }
 
   .photos-wrap {
-    position: relative;
     width: 100%;
-    height: 48vh;
-    min-height: 320px;
-    margin: 12px 0 12px;
+    margin: 12px auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 0;
   }
   .photo {
-    position: relative;
-    width: 50%;
-    max-width: 260px;
-    height: 100%;
-    /* Red sketchy outline behind the cutout (like in reference) */
+    width: 60%;
+    max-width: 380px;
+    height: auto;
+    display: block;
     filter:
-      drop-shadow(2px 0 0 #b8362c)
-      drop-shadow(-2px 0 0 #b8362c)
-      drop-shadow(0 2px 0 #b8362c)
-      drop-shadow(0 -2px 0 #b8362c)
-      drop-shadow(3px 3px 0 #b8362c)
-      drop-shadow(-3px -3px 0 #b8362c)
-      drop-shadow(0 8px 16px rgba(0,0,0,0.18));
+      drop-shadow(3px 0 0 #b8362c)
+      drop-shadow(-3px 0 0 #b8362c)
+      drop-shadow(0 3px 0 #b8362c)
+      drop-shadow(0 -3px 0 #b8362c)
+      drop-shadow(4px 4px 0 #b8362c)
+      drop-shadow(-4px -4px 0 #b8362c)
+      drop-shadow(0 10px 18px rgba(0,0,0,0.18));
   }
-  .photo img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block; }
-  .photo.left { margin-right: -40px; z-index: 2; }
-  .photo.right { margin-left: -40px; z-index: 1; }
-  .photo .placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--red);
-    font-family: 'Caveat', cursive;
-    font-size: 18px;
-    text-align: center;
-    padding: 10px;
-    background: rgba(255,255,255,0.3);
-    border: 2px dashed var(--red);
-    border-radius: 8px;
-  }
+  .photo-left { margin-right: -15%; transform: translateY(0); z-index: 2; }
+  .photo-right { margin-left: -15%; z-index: 1; }
 
   /* Floating hearts */
   .heart {
@@ -447,10 +430,10 @@
     }
     .hero .title { font-size: 28px; }
     .hero .title-sub { font-size: 36px; }
-    .photos-wrap { height: 50vh; min-height: 280px; margin: 8px 0; }
-    .photo { max-width: 220px; }
-    .photo.left { margin-right: -50px; }
-    .photo.right { margin-left: -50px; }
+    .photos-wrap { margin: 6px auto; }
+    .photo { max-width: none; width: 58%; }
+    .photo-left { margin-right: -18%; }
+    .photo-right { margin-left: -18%; }
     .container { padding: 0 0 30px; max-width: none; }
     .top-bar { position: fixed; }
     .top-pill { font-size: 18px; padding: 10px 20px; }
@@ -491,19 +474,8 @@
     <div class="title-sub">махаббат</div>
 
     <div class="photos-wrap">
-      <span class="heart h1"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
-      <span class="heart h2"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
-      <span class="heart h3"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
-      <span class="heart h4"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
-      <span class="heart h5"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
-      <span class="heart h6"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
-
-      <div class="photo left">
-        <img src="assets/dayana-cut.png" alt="Даяна" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Даяна</div>'">
-      </div>
-      <div class="photo right">
-        <img src="assets/abylbek-cut.png" alt="Абылбек" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Абылбек</div>'">
-      </div>
+      <img class="photo photo-left" src="assets/dayana-cut.png?v=4" alt="Даяна">
+      <img class="photo photo-right" src="assets/abylbek-cut.png?v=4" alt="Абылбек">
     </div>
 
     <div class="date-pill">26 шілде 2026 жыл</div>

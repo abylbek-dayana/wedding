@@ -108,8 +108,9 @@
   .photos-wrap {
     position: relative;
     width: 100%;
-    height: 600px;
-    margin: 24px 0 16px;
+    height: 48vh;
+    min-height: 320px;
+    margin: 12px 0 12px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -117,8 +118,8 @@
   }
   .photo {
     position: relative;
-    width: 52%;
-    max-width: 340px;
+    width: 50%;
+    max-width: 260px;
     height: 100%;
     /* Red sketchy outline behind the cutout (like in reference) */
     filter:
@@ -131,8 +132,8 @@
       drop-shadow(0 8px 16px rgba(0,0,0,0.18));
   }
   .photo img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block; }
-  .photo.left { margin-right: -10px; z-index: 2; }
-  .photo.right { z-index: 1; }
+  .photo.left { margin-right: -40px; z-index: 2; }
+  .photo.right { margin-left: -40px; z-index: 1; }
   .photo .placeholder {
     width: 100%; height: 100%;
     display: flex; align-items: center; justify-content: center;
@@ -438,10 +439,23 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 18px;
+      padding: 100px 18px 30px;
     }
+    .page.hero {
+      justify-content: flex-start;
+      padding-top: 110px;
+    }
+    .hero .title { font-size: 28px; }
+    .hero .title-sub { font-size: 36px; }
+    .photos-wrap { height: 50vh; min-height: 280px; margin: 8px 0; }
+    .photo { max-width: 220px; }
+    .photo.left { margin-right: -50px; }
+    .photo.right { margin-left: -50px; }
     .container { padding: 0 0 30px; max-width: none; }
     .top-bar { position: fixed; }
+    .top-pill { font-size: 18px; padding: 10px 20px; }
+    .top-pill .small { font-size: 14px; }
+    .date-pill { font-size: 18px; padding: 10px 22px; margin-top: 8px; }
   }
 </style>
 </head>

@@ -3,441 +3,374 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title>Абылбек және Даяна · 26 шілде 2026</title>
+<title>Абылбек + Даяна · 26 шілде 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Marcellus&family=Allura&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Marck+Script&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f0ebde;
-    --cream: #f5f0e3;
-    --cream-soft: #faf6ed;
-    --sage: #7a8e6b;
-    --sage-dark: #4a5d3f;
-    --sage-darker: #364528;
-    --sage-light: #b5c4a4;
-    --sage-bg: #94a988;
-    --gold: #c9a96e;
-    --gold-dark: #a6864f;
-    --ink: #2e3a26;
-    --muted: #6f7a64;
+    --bg: #ebdfc6;
+    --bg-2: #e6d6b3;
+    --paper: #f0e6cf;
+    --red: #b8362c;
+    --red-light: #d04035;
+    --red-soft: #e0786a;
+    --green: #5b6a3a;
+    --green-soft: #7d8a5a;
+    --ink: #2a2a2a;
+    --line: #c5b894;
+    --muted: #7d705a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { overflow-x: hidden; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
     background: var(--bg);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(184,54,44,0.04), transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(91,106,58,0.05), transparent 40%);
     color: var(--ink);
-    line-height: 1.5;
+    line-height: 1.4;
     font-weight: 400;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Top back-button */
+  /* Sticky top pill */
   .top-bar {
     position: sticky;
     top: 0;
     z-index: 50;
-    padding: 16px 16px 0;
+    padding: 16px;
     pointer-events: none;
+    text-align: center;
   }
-  .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: white;
-    border: none;
+  .top-pill {
+    display: inline-block;
+    background: var(--green);
+    color: #f0e6cf;
+    padding: 12px 24px;
     border-radius: 999px;
-    padding: 10px 18px 10px 14px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--sage-dark);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    cursor: pointer;
+    font-family: 'Marck Script', cursive;
+    font-size: 22px;
+    line-height: 1.2;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     pointer-events: auto;
   }
+  .top-pill .small { font-family: 'Caveat', cursive; font-size: 17px; opacity: 0.85; display:block; }
 
   .container {
     max-width: 540px;
     margin: 0 auto;
-    padding: 0 0 24px;
+    padding: 0 20px 60px;
   }
 
   /* Pages */
   .page {
     position: relative;
-    overflow: hidden;
-    padding: 60px 28px 80px;
-    min-height: 90vh;
-  }
-  .page.cream { background: var(--cream); }
-  .page.sage { background: var(--sage-bg); color: white; }
-
-  /* Floral decorations using PNGs */
-  .floral {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .floral img { width: 100%; height: 100%; object-fit: contain; display: block; }
-
-  .floral.top-wide {
-    top: -30px;
-    left: -40px;
-    width: calc(100% + 80px);
-    height: 200px;
-  }
-  .floral.top-wide img { object-fit: cover; object-position: center top; }
-
-  .floral.tl { top: -20px; left: -30px; width: 160px; height: 160px; transform: rotate(-10deg); }
-  .floral.tr { top: -20px; right: -30px; width: 160px; height: 160px; transform: rotate(10deg) scaleX(-1); }
-  .floral.bl { bottom: -30px; left: -40px; width: 200px; height: 200px; transform: rotate(15deg); }
-  .floral.br { bottom: -30px; right: -40px; width: 200px; height: 200px; transform: rotate(-15deg) scaleX(-1); }
-  .floral.bl-sm { bottom: -10px; left: -20px; width: 140px; height: 140px; }
-  .floral.tr-sm { top: 20px; right: -10px; width: 130px; height: 130px; transform: scaleX(-1); }
-
-  .page > .content { position: relative; z-index: 2; }
-
-  /* Header label */
-  .label {
-    font-family: 'Marcellus', serif;
-    font-weight: 400;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    font-size: 17px;
+    padding: 40px 16px 50px;
     text-align: center;
-    color: var(--sage-dark);
   }
-  .page.sage .label { color: white; }
 
-  /* COVER */
-  .cover .content { text-align: center; padding-top: 150px; padding-bottom: 60px; }
-  .cover .label { font-size: 15px; margin-bottom: 26px; }
-  .cover .rings { width: 130px; margin: 0 auto 14px; }
-  .cover .rings img { width: 100%; }
-  .cover .names {
-    font-family: 'Allura', cursive;
-    color: var(--sage-dark);
-    font-size: clamp(60px, 16vw, 92px);
+  /* HERO */
+  .hero .title {
+    font-family: 'Marck Script', cursive;
+    color: var(--red);
+    font-size: clamp(38px, 9vw, 56px);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .hero .title .strike {
+    position: relative;
+    display: inline-block;
+  }
+  .hero .title .strike::after {
+    content: "";
+    position: absolute;
+    left: -8%; right: -8%;
+    top: 60%;
+    height: 2px;
+    background: var(--red);
+    transform: rotate(-3deg);
+  }
+  .hero .title-sub {
+    font-family: 'Marck Script', cursive;
+    color: var(--red);
+    font-size: clamp(46px, 11vw, 64px);
+    line-height: 0.9;
+    text-decoration: underline wavy;
+    text-decoration-color: var(--red);
+    text-underline-offset: 4px;
+    margin-top: -4px;
+  }
+
+  .photos-wrap {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    margin: 24px 0 16px;
+  }
+  .photo {
+    position: absolute;
+    width: 160px;
+    height: 220px;
+    background: var(--paper);
+    border: 8px solid #fff;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo.left { left: 8%; top: 30px; transform: rotate(-5deg); }
+  .photo.right { right: 8%; top: 50px; transform: rotate(4deg); }
+  .photo .placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #ddc9a5, #c9b387);
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    width: 28px; height: 28px;
+    pointer-events: none;
+  }
+  .heart svg { width: 100%; height: 100%; }
+  .heart.h1 { top: 0; left: 5%; transform: rotate(-15deg); width: 36px; height: 36px; }
+  .heart.h2 { top: 20px; right: 12%; transform: rotate(12deg); width: 24px; height: 24px; }
+  .heart.h3 { top: 60px; left: 30%; transform: rotate(8deg); width: 18px; height: 18px; }
+  .heart.h4 { top: 110px; right: 30%; transform: rotate(-20deg); width: 22px; height: 22px; }
+  .heart.h5 { top: 160px; left: 10%; transform: rotate(15deg); width: 16px; height: 16px; }
+  .heart.h6 { top: 200px; right: 6%; transform: rotate(-8deg); width: 28px; height: 28px; }
+
+  .date-pill {
+    display: inline-block;
+    margin-top: 18px;
+    background: var(--green);
+    color: #f0e6cf;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  /* Section headers */
+  .section-title {
+    font-family: 'Marck Script', cursive;
+    color: var(--red);
+    font-size: 48px;
     line-height: 1;
+    margin-bottom: 12px;
   }
-  .cover .amp {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 0.5em;
-    margin: 4px 0;
-    color: var(--sage-dark);
-  }
-  .cover .date-line {
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.3em;
-    font-size: 13px;
-    color: var(--sage-dark);
-    margin-top: 28px;
-    text-transform: uppercase;
+  .section-title.with-strike { position: relative; display: inline-block; padding-bottom: 6px; }
+  .section-title.with-strike::after {
+    content: "";
+    position: absolute;
+    bottom: 4px; left: 5%; right: 5%;
+    height: 2px;
+    background: var(--red);
+    border-radius: 1px;
   }
 
   /* GREETING */
-  .greeting-page .content { text-align: center; padding-top: 200px; }
-  .greeting-page h2 {
-    font-family: 'Marcellus', serif;
-    color: white;
-    letter-spacing: 0.18em;
-    font-size: 24px;
-    margin-bottom: 28px;
-    text-transform: uppercase;
-  }
-  .greeting-page .invite-body {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    color: white;
-    line-height: 1.6;
+  .greeting-text {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.5;
     max-width: 380px;
     margin: 0 auto;
   }
-  .greeting-page .signature {
-    margin-top: 36px;
-    font-family: 'Allura', cursive;
-    font-size: 32px;
-    color: white;
-  }
-  .greeting-page .signature-names {
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.2em;
-    font-size: 16px;
-    color: white;
-    margin-top: 4px;
-  }
 
-  /* DATE */
-  .date-page .content { text-align: center; padding-top: 140px; padding-bottom: 80px; }
-  .date-page .month {
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    font-size: 18px;
-    color: var(--sage-dark);
-    margin-bottom: 32px;
-  }
-  .date-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 22px;
-    margin-bottom: 28px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
-    color: var(--sage-light);
-    font-weight: 400;
-  }
-  .date-row .focus {
+  /* CALENDAR with decorative frame */
+  .calendar-wrap {
     position: relative;
-    color: var(--sage-dark);
-    font-size: 28px;
-    padding: 0 6px;
+    max-width: 360px;
+    margin: 8px auto 0;
+    padding: 50px 30px 60px;
   }
-  .date-row .focus::before {
+  .calendar-wrap::before, .calendar-wrap::after {
     content: "";
     position: absolute;
-    inset: -22px -10px;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 70' fill='none' stroke='%234a5d3f' stroke-width='1.6'><path d='M40 62 C 14 44 6 28 14 18 C 22 8 34 12 40 22 C 46 12 58 8 66 18 C 74 28 66 44 40 62 Z'/></svg>");
-    background-size: contain;
+    left: 0; right: 0;
+    height: 50px;
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
-    z-index: -1;
+    pointer-events: none;
   }
-  .clock {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--sage-dark);
-    letter-spacing: 0.08em;
-    margin-bottom: 22px;
+  .calendar-wrap::before {
+    top: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 50' fill='none' stroke='%23b8362c' stroke-width='1.8' stroke-linecap='round'><path d='M30 40 Q60 10 100 20 Q130 25 150 10 Q170 25 200 20 Q240 10 270 40'/><circle cx='150' cy='10' r='4' fill='%23b8362c'/><path d='M150 14 Q146 20 150 26 Q154 20 150 14 Z' fill='%23b8362c'/><path d='M60 25 Q55 30 60 35 Q65 30 60 25 Z' fill='%23b8362c'/><path d='M240 25 Q235 30 240 35 Q245 30 240 25 Z' fill='%23b8362c'/></svg>");
   }
-  .clock .hand { font-size: 15px; color: var(--sage); letter-spacing: 0.2em; margin-right: 10px; }
-  .year {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
-    font-size: 72px;
-    color: var(--sage-dark);
-    line-height: 1;
-    letter-spacing: 0.04em;
-    margin-bottom: 32px;
+  .calendar-wrap::after {
+    bottom: 0;
+    transform: scaleY(-1);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 50' fill='none' stroke='%23b8362c' stroke-width='1.8' stroke-linecap='round'><path d='M30 40 Q60 10 100 20 Q130 25 150 10 Q170 25 200 20 Q240 10 270 40'/><circle cx='150' cy='10' r='4' fill='%23b8362c'/><path d='M60 25 Q55 30 60 35 Q65 30 60 25 Z' fill='%23b8362c'/><path d='M240 25 Q235 30 240 35 Q245 30 240 25 Z' fill='%23b8362c'/></svg>");
   }
-  .dow-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    font-family: 'Marcellus', serif;
-    font-size: 13px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--sage-light);
+  .cal-side-left, .cal-side-right {
+    position: absolute;
+    top: 50px; bottom: 60px;
+    width: 12px;
+    background-image: linear-gradient(180deg, var(--red), var(--red) 6px, transparent 6px, transparent 14px);
+    background-size: 100% 14px;
+    background-repeat: repeat-y;
   }
-  .dow-list .dow {
-    padding: 6px 16px;
-    border: 1.5px solid transparent;
-    border-radius: 4px;
-    transition: all 0.3s;
-  }
-  .dow-list .dow.active {
-    color: var(--sage-dark);
-    border-color: var(--sage-dark);
-    font-weight: 500;
-  }
-
-  /* PLACE */
-  .place-page .content { padding-top: 150px; text-align: center; }
-  .place-page .label { margin-bottom: 26px; color: white; }
-  .place-img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: #1a1a1a;
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 24px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-  }
-  .place-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .place-city {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--cream-soft);
-    font-size: 22px;
-    margin-bottom: 4px;
-  }
-  .place-venue {
-    font-family: 'Cormorant Garamond', serif;
-    color: white;
-    font-size: 26px;
-    font-weight: 500;
-    margin-bottom: 24px;
-  }
-  .map-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    text-decoration: none;
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-size: 13px;
-    padding: 14px 30px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.4);
-    backdrop-filter: blur(6px);
-    transition: background 0.3s;
-  }
-  .map-btn:hover { background: rgba(255,255,255,0.32); }
-
-  /* PROGRAM */
-  .program-page .content { padding-top: 180px; text-align: center; }
-  .program-page h2 { font-family: 'Marcellus', serif; letter-spacing: 0.3em; font-size: 22px; color: var(--sage-dark); text-transform: uppercase; margin-bottom: 36px; }
-  .program-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 24px 0;
-    position: relative;
-  }
-  .program-item + .program-item::before {
-    content: "";
-    width: 1px;
-    height: 24px;
-    background: var(--sage-light);
+  .cal-side-left { left: 14px; }
+  .cal-side-right { right: 14px; }
+  .calendar-month {
+    font-family: 'Marck Script', cursive;
+    color: var(--red);
+    font-size: 36px;
     margin-bottom: 14px;
   }
-  .program-item .time {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    color: var(--sage-dark);
-    font-weight: 500;
-    line-height: 1;
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--ink);
   }
-  .program-item .name {
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 6px;
+  .calendar .dow {
+    color: var(--red);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    padding-bottom: 6px;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+  }
+  .calendar .day { padding: 4px 0; position: relative; }
+  .calendar .day.dim { color: var(--line); }
+  .calendar .day.mark {
+    color: white;
+    font-weight: 700;
+    z-index: 1;
+  }
+  .calendar .day.mark::before {
+    content: "";
+    position: absolute;
+    inset: -2px -4px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 36' fill='%23b8362c'><path d='M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z'/></svg>");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
 
-  /* DRESS */
-  .dress-page .content { padding-top: 170px; text-align: center; }
-  .dress-page h2 { font-family: 'Marcellus', serif; letter-spacing: 0.3em; font-size: 22px; text-transform: uppercase; margin-bottom: 18px; color: white; }
-  .dress-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    color: white;
-    line-height: 1.55;
-    max-width: 380px;
-    margin: 0 auto 22px;
+  /* PROGRAM (timing) */
+  .program-list { max-width: 360px; margin: 24px auto 0; }
+  .program-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 18px 0;
+    text-align: left;
   }
+  .program-row .icon {
+    width: 70px; height: 70px;
+    flex-shrink: 0;
+  }
+  .program-row .icon svg { width: 100%; height: 100%; }
+  .program-row .info { flex: 1; }
+  .program-row .label {
+    font-family: 'Caveat', cursive;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.1;
+  }
+  .program-row .time {
+    font-family: 'Marck Script', cursive;
+    color: var(--red);
+    font-size: 38px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .program-row .note {
+    font-family: 'Caveat', cursive;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+  /* LOCATION */
+  .loc-block {
+    position: relative;
+    background: var(--red);
+    color: #f5ecd6;
+    padding: 20px 24px;
+    border-radius: 14px;
+    margin: 14px auto;
+    max-width: 320px;
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    line-height: 1.3;
+  }
+  .loc-block .addr { font-size: 18px; margin-bottom: 10px; }
+  .loc-block a {
+    display: inline-block;
+    color: #fffaef;
+    text-decoration: none;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    padding-top: 8px;
+    margin-top: 4px;
+    font-size: 18px;
+    font-family: 'Caveat', cursive;
+  }
+  .loc-heart {
+    position: relative;
+    width: 220px;
+    margin: 10px auto;
+  }
+  .loc-heart svg { width: 100%; height: auto; }
+
+  /* DRESS CODE */
+  .rose-illust { width: 200px; margin: 10px auto; }
+  .rose-illust svg { width: 100%; height: auto; }
   .palette {
     display: flex;
     justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 28px;
+    gap: 10px;
+    margin: 16px auto;
   }
-  .swatch {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  .palette .heart-sw {
+    width: 36px; height: 36px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
 
   /* RSVP */
-  .rsvp-page .content { padding-top: 170px; text-align: center; }
-  .rsvp-page h2 {
-    font-family: 'Marcellus', serif;
-    font-size: 20px;
-    letter-spacing: 0.14em;
-    color: var(--sage-dark);
-    text-transform: uppercase;
-    line-height: 1.4;
-    margin-bottom: 32px;
-  }
-  .rsvp-options {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    max-width: 420px;
-    margin: 0 auto 22px;
-  }
-  .rsvp-opt {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px 20px;
-    background: rgba(122, 142, 107, 0.08);
-    border: 1.5px solid rgba(122, 142, 107, 0.25);
+  .rsvp form { max-width: 360px; margin: 18px auto 0; display: flex; flex-direction: column; gap: 12px; }
+  .rsvp input, .rsvp select {
+    padding: 14px 18px;
+    border: 1.5px solid var(--red);
+    background: rgba(255,255,255,0.5);
     border-radius: 999px;
-    cursor: pointer;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
-    color: var(--sage-dark);
-    transition: all 0.25s;
-  }
-  .rsvp-opt input { position: absolute; opacity: 0; }
-  .rsvp-opt .radio {
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--sage-light);
-    flex-shrink: 0;
-    position: relative;
-    transition: all 0.25s;
-  }
-  .rsvp-opt input:checked + .radio {
-    border-color: var(--sage-dark);
-    background: var(--sage-dark);
-  }
-  .rsvp-opt input:checked + .radio::after {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    background: white;
-    border-radius: 50%;
-  }
-  .rsvp-opt:has(input:checked) {
-    background: rgba(122, 142, 107, 0.2);
-    border-color: var(--sage-dark);
-  }
-  .rsvp-name {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-    padding: 14px 22px;
-    border: 1.5px solid rgba(122, 142, 107, 0.25);
-    background: rgba(255,255,255,0.6);
-    border-radius: 999px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
-    color: var(--sage-dark);
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--ink);
     text-align: center;
   }
-  .rsvp-name::placeholder { color: var(--sage-light); }
-  .rsvp-name:focus { outline: none; border-color: var(--sage-dark); }
+  .rsvp input::placeholder { color: var(--red-soft); }
+  .rsvp input:focus, .rsvp select:focus { outline: none; background: white; }
   .submit-btn {
-    margin-top: 22px;
-    background: var(--sage-dark);
-    color: white;
+    background: var(--red);
+    color: #f5ecd6;
     border: none;
     border-radius: 999px;
-    padding: 16px 56px;
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-size: 13px;
+    padding: 14px 36px;
+    font-family: 'Marck Script', cursive;
+    font-size: 22px;
     cursor: pointer;
-    box-shadow: 0 10px 24px rgba(74, 93, 63, 0.3);
+    box-shadow: 0 8px 18px rgba(184,54,44,0.3);
     transition: transform 0.25s;
   }
   .submit-btn:hover { transform: translateY(-2px); }
@@ -446,38 +379,44 @@
   .countdown {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    margin-top: 36px;
+    gap: 14px;
+    margin-top: 22px;
   }
-  .count-cell { text-align: center; min-width: 56px; }
+  .count-cell { text-align: center; min-width: 64px; }
   .count-cell .n {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    color: var(--sage-dark);
+    font-family: 'Marck Script', cursive;
+    font-size: 44px;
+    color: var(--red);
     line-height: 1;
-    font-weight: 500;
   }
   .count-cell .u {
-    font-family: 'Marcellus', serif;
-    font-size: 10px;
-    letter-spacing: 0.2em;
+    font-family: 'Caveat', cursive;
+    font-size: 14px;
     color: var(--muted);
-    text-transform: uppercase;
-    margin-top: 4px;
+    margin-top: 2px;
+  }
+  .couple-illust { width: 220px; margin: 18px auto 0; }
+  .couple-illust svg { width: 100%; height: auto; }
+
+  /* dashed separator */
+  .sep {
+    margin: 40px auto;
+    width: 70%;
+    border: none;
+    border-top: 2px dashed var(--red-soft);
+    opacity: 0.5;
   }
 
   /* Footer */
   .footer-note {
     text-align: center;
-    padding: 32px 24px 28px;
-    color: var(--muted);
-    font-family: 'Marcellus', serif;
-    letter-spacing: 0.3em;
-    font-size: 11px;
-    text-transform: uppercase;
+    padding: 30px 24px 24px;
+    color: var(--red);
+    font-family: 'Marck Script', cursive;
+    font-size: 22px;
   }
 
-  /* Snap scroll on mobile */
+  /* Snap scroll for mobile */
   @media (max-width: 768px) {
     html { scroll-snap-type: y mandatory; }
     .page {
@@ -488,178 +427,322 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 22px 80px;
+      padding: 80px 18px;
     }
-    .container { padding: 0; max-width: none; }
+    .container { padding: 0 0 30px; max-width: none; }
     .top-bar { position: fixed; }
   }
 </style>
 </head>
 <body>
 
+<!-- Sticky title -->
 <div class="top-bar">
-  <button class="back-btn" onclick="history.length > 1 ? history.back() : window.scrollTo({top:0,behavior:'smooth'})" aria-label="Артқа">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"/></svg>
-    <span>Артқа</span>
-  </button>
+  <div class="top-pill">
+    Үйлену тойы
+    <span class="small">26 шілде 2026</span>
+  </div>
 </div>
+
+<!-- Reusable SVG hearts -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="heart" viewBox="0 0 40 36">
+      <path d="M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z" fill="#b8362c"/>
+    </symbol>
+    <symbol id="heart-outline" viewBox="0 0 40 36">
+      <path d="M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z" fill="none" stroke="#b8362c" stroke-width="2" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
 
 <div class="container">
 
-  <!-- COVER -->
-  <section class="page cream cover">
-    <div class="floral tl"><img src="assets/trio.png" alt=""></div>
-    <div class="floral tr"><img src="assets/trio.png" alt=""></div>
-    <div class="floral br"><img src="assets/bouquet.png" alt=""></div>
-    <div class="floral bl"><img src="assets/single.png" alt=""></div>
-    <div class="content">
-      <div class="label">Үйлену тойына шақыру</div>
-      <div class="rings"><img src="assets/rings.png" alt="Wedding rings"></div>
-      <div class="names">
-        Абылбек
-        <span class="amp">&amp;</span>
-        Даяна
-      </div>
-      <div class="date-line">26 шілде · 2026</div>
+  <!-- HERO -->
+  <section class="page hero">
+    <div class="title">
+      Абылбек <span style="color:var(--red)">+</span> Даяна =
     </div>
+    <div class="title-sub">махаббат</div>
+
+    <div class="photos-wrap">
+      <span class="heart h1"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
+      <span class="heart h2"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
+      <span class="heart h3"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
+      <span class="heart h4"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
+      <span class="heart h5"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
+      <span class="heart h6"><svg viewBox="0 0 40 36"><use href="#heart-outline"/></svg></span>
+
+      <div class="photo left">
+        <img src="assets/abylbek-kid.jpg" alt="Абылбек" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Абылбек<br>(сақтаңыз: abylbek-kid.jpg)</div>'">
+      </div>
+      <div class="photo right">
+        <img src="assets/dayana-kid.jpg" alt="Даяна" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder&quot;>Даяна<br>(сақтаңыз: dayana-kid.jpg)</div>'">
+      </div>
+    </div>
+
+    <div class="date-pill">26 шілде 2026 жыл</div>
   </section>
+
+  <hr class="sep">
 
   <!-- GREETING -->
-  <section class="page sage greeting-page">
-    <div class="floral top-wide"><img src="assets/bouquet.png" alt=""></div>
-    <div class="floral br"><img src="assets/trio.png" alt=""></div>
-    <div class="content">
-      <h2>Құрметті қонақтар!</h2>
-      <p class="invite-body">
-        Зор қуанышпен және үлкен сүйіспеншілікпен өміріміздің маңызды әрі әсерлі сәтін бізбен бөлісуге шақырамыз.
-      </p>
-      <p class="invite-body" style="margin-top: 18px;">
-        Сіздердің қатысуыңыз бұл күнді ерекше етеді.
-      </p>
-      <div class="signature">Құрметпен,</div>
-      <div class="signature-names">Абылбек &amp; Даяна</div>
-    </div>
+  <section class="page">
+    <div class="section-title with-strike">Таныдыңыз ба?</div>
+    <p class="greeting-text">
+      Уақыт байқалмай өте шықты,<br>
+      ал осы екі бөбектің жақын арада<br>
+      үйлену тойы өтеді.<br>
+      Иә-иә, өзіміз де таңғаламыз!
+    </p>
   </section>
 
-  <!-- DATE -->
-  <section class="page cream date-page">
-    <div class="floral tr-sm"><img src="assets/trio.png" alt=""></div>
-    <div class="floral bl"><img src="assets/branch.png" alt=""></div>
-    <div class="content">
-      <div class="month">Шілде</div>
-      <div class="date-row">
-        <span>24</span>
-        <span>25</span>
-        <span class="focus">26</span>
-        <span>27</span>
-        <span>28</span>
-      </div>
-      <div class="clock"><span class="hand">сағат</span>17:00</div>
-      <div class="year">2026</div>
-      <div class="dow-list">
-        <div class="dow">Сәрсенбі</div>
-        <div class="dow">Бейсенбі</div>
-        <div class="dow">Жұма</div>
-        <div class="dow">Сенбі</div>
-        <div class="dow active">Жексенбі</div>
-        <div class="dow">Дүйсенбі</div>
-        <div class="dow">Сейсенбі</div>
-      </div>
-      <div class="countdown" id="countdown">
-        <div class="count-cell"><div class="n" id="d">0</div><div class="u">күн</div></div>
-        <div class="count-cell"><div class="n" id="h">0</div><div class="u">сағат</div></div>
-        <div class="count-cell"><div class="n" id="m">0</div><div class="u">минут</div></div>
+  <hr class="sep">
+
+  <!-- CALENDAR -->
+  <section class="page">
+    <div class="calendar-wrap">
+      <div class="cal-side-left"></div>
+      <div class="cal-side-right"></div>
+      <div class="calendar-month">Шілде</div>
+      <div class="calendar">
+        <div class="dow">дс</div><div class="dow">сс</div><div class="dow">ср</div><div class="dow">бс</div><div class="dow">жм</div><div class="dow">сб</div><div class="dow">жс</div>
+        <div class="day dim">29</div><div class="day dim">30</div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div>
+        <div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div>
+        <div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div>
+        <div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day mark">26</div>
+        <div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div><div class="day dim">1</div><div class="day dim">2</div>
       </div>
     </div>
   </section>
 
-  <!-- PLACE -->
-  <section class="page sage place-page">
-    <div class="floral tl"><img src="assets/trio.png" alt=""></div>
-    <div class="floral br"><img src="assets/bouquet.png" alt=""></div>
-    <div class="content">
-      <div class="label">Той жайлы</div>
-      <div class="place-img">
-        <img src="assets/venue.jpg" alt="Aisultan Plaza">
-      </div>
-      <div class="place-city">Алматы</div>
-      <div class="place-venue">Aisultan Plaza</div>
-      <a class="map-btn" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener">
-        <span>Карта арқылы ашу</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-      </a>
-    </div>
-  </section>
+  <hr class="sep">
 
   <!-- PROGRAM -->
-  <section class="page cream program-page">
-    <div class="floral top-wide"><img src="assets/bouquet.png" alt=""></div>
-    <div class="floral bl"><img src="assets/single.png" alt=""></div>
-    <div class="content">
-      <h2>Бағдарлама</h2>
-      <div class="program-item">
-        <div class="time">17:00</div>
-        <div class="name">Қонақтарды қарсы алу</div>
+  <section class="page">
+    <div class="section-title with-strike">Бағдарлама</div>
+
+    <div class="program-list">
+      <!-- 17:00 — Гости -->
+      <div class="program-row">
+        <div class="icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 20 Q20 38 32 44 Q44 38 44 20 Z"/>
+            <path d="M32 44 L32 62 M24 62 L40 62"/>
+            <path d="M36 20 Q36 38 48 44 Q60 38 60 20 Z"/>
+            <path d="M48 44 L48 62 M40 62 L56 62"/>
+            <path d="M14 12 L18 16 M22 8 L22 14 M30 12 L26 16"/>
+            <path d="M52 12 L56 16 M62 8 L62 14 M70 12 L66 16"/>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="label">қонақтарды қарсы алу</div>
+          <div class="time">17:00</div>
+          <div class="note">құттықтасып, бірге фотоға түсеміз</div>
+        </div>
       </div>
-      <div class="program-item">
-        <div class="time">18:00</div>
-        <div class="name">Беташар</div>
+
+      <!-- 18:00 — Беташар -->
+      <div class="program-row">
+        <div class="icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- vase with flowers -->
+            <path d="M28 60 L26 78 L54 78 L52 60 Z"/>
+            <path d="M28 60 L52 60"/>
+            <path d="M40 60 L40 36"/>
+            <path d="M40 36 Q34 30 30 24 Q38 26 40 36"/>
+            <path d="M40 36 Q46 30 50 24 Q42 26 40 36"/>
+            <path d="M36 42 Q30 38 26 32 Q34 36 36 42"/>
+            <path d="M44 42 Q50 38 54 32 Q46 36 44 42"/>
+            <circle cx="32" cy="26" r="3" fill="#b8362c"/>
+            <circle cx="48" cy="26" r="3" fill="#b8362c"/>
+            <circle cx="40" cy="22" r="3" fill="#b8362c"/>
+            <circle cx="28" cy="34" r="2.5" fill="#b8362c"/>
+            <circle cx="52" cy="34" r="2.5" fill="#b8362c"/>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="label">беташар</div>
+          <div class="time">18:00</div>
+          <div class="note">келінмен таныстыру дәстүрі</div>
+        </div>
       </div>
-      <div class="program-item">
-        <div class="time">19:00</div>
-        <div class="name">Той дастарханы</div>
+
+      <!-- 19:00 — Той дастарханы -->
+      <div class="program-row">
+        <div class="icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- candles -->
+            <path d="M22 30 L22 64 M30 30 L30 64 M38 30 L38 64"/>
+            <path d="M22 28 Q21 24 22 22 Q23 24 22 28 M30 28 Q29 24 30 22 Q31 24 30 28 M38 28 Q37 24 38 22 Q39 24 38 28" fill="#b8362c"/>
+            <path d="M16 64 L44 64"/>
+            <!-- wine glass right -->
+            <path d="M52 36 Q52 50 60 52 Q68 50 68 36 Z"/>
+            <path d="M60 52 L60 64 M54 64 L66 64"/>
+            <circle cx="60" cy="42" r="3" fill="#b8362c"/>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="label">той дастарханы</div>
+          <div class="time">19:00</div>
+          <div class="note">дәмді тағамдар мен көңілді сәттер</div>
+        </div>
+      </div>
+
+      <!-- 22:00 — Cake -->
+      <div class="program-row">
+        <div class="icon">
+          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- wedding cake -->
+            <path d="M30 32 L50 32 L52 44 L28 44 Z"/>
+            <path d="M22 44 L58 44 L60 60 L20 60 Z"/>
+            <path d="M14 60 L66 60 L68 76 L12 76 Z"/>
+            <path d="M40 32 L40 26"/>
+            <path d="M40 24 Q38 20 40 18 Q42 20 40 24" fill="#b8362c"/>
+            <!-- heart on top -->
+            <path d="M38 28 Q34 26 36 23 Q38 22 40 26 Q42 22 44 23 Q46 26 42 28 Q40 30 38 28 Z" fill="#b8362c"/>
+            <!-- icing dots -->
+            <circle cx="34" cy="40" r="1.5" fill="#b8362c"/>
+            <circle cx="40" cy="40" r="1.5" fill="#b8362c"/>
+            <circle cx="46" cy="40" r="1.5" fill="#b8362c"/>
+            <circle cx="28" cy="54" r="1.5" fill="#b8362c"/>
+            <circle cx="36" cy="54" r="1.5" fill="#b8362c"/>
+            <circle cx="44" cy="54" r="1.5" fill="#b8362c"/>
+            <circle cx="52" cy="54" r="1.5" fill="#b8362c"/>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="label">той тортын тілу</div>
+          <div class="time">22:00</div>
+          <div class="note">бақытты сәттің тәтті символы</div>
+        </div>
       </div>
     </div>
   </section>
+
+  <hr class="sep">
+
+  <!-- LOCATION -->
+  <section class="page">
+    <div class="section-title with-strike">Локация</div>
+
+    <!-- Big heart with venue -->
+    <div class="loc-heart">
+      <svg viewBox="0 0 220 200" fill="none">
+        <path d="M110 180 C 30 130 -5 80 30 40 C 55 15 90 25 110 60 C 130 25 165 15 190 40 C 225 80 190 130 110 180 Z" fill="#b8362c"/>
+        <text x="110" y="80" text-anchor="middle" fill="#f5ecd6" font-family="Caveat, cursive" font-size="22" font-weight="600">Aisultan Plaza</text>
+        <text x="110" y="105" text-anchor="middle" fill="#f5ecd6" font-family="Caveat, cursive" font-size="18">Алматы қаласы</text>
+        <foreignObject x="50" y="115" width="120" height="44">
+          <a xmlns="http://www.w3.org/1999/xhtml" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener" style="display:block; text-align:center; color:#fffaef; font-family:Caveat, cursive; font-size:18px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.4); text-decoration:none;">→ Картадан көру</a>
+        </foreignObject>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="sep">
 
   <!-- DRESS CODE -->
-  <section class="page sage dress-page">
-    <div class="floral tr"><img src="assets/trio.png" alt=""></div>
-    <div class="floral bl"><img src="assets/bouquet.png" alt=""></div>
-    <div class="content">
-      <h2>Дресс-код</h2>
-      <p class="dress-text">Біз үшін ең бастысы — сіз!</p>
-      <p class="dress-text" style="font-size:16px; opacity:0.9;">
-        Дегенмен, ханымдар пастельді түсті көйлек, ал мырзалар классикалық костюм киіп келсе, қуанышты боламыз.
-      </p>
-      <div class="palette">
-        <div class="swatch" style="background:#9eb38b"></div>
-        <div class="swatch" style="background:#e8a87c"></div>
-        <div class="swatch" style="background:#e89b9b"></div>
-        <div class="swatch" style="background:#f3cdd0"></div>
-        <div class="swatch" style="background:#c9deec"></div>
-        <div class="swatch" style="background:#f3ece0"></div>
-      </div>
+  <section class="page">
+    <div class="section-title with-strike">Дресс-код</div>
+
+    <div class="rose-illust">
+      <svg viewBox="0 0 200 220" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- big stylized rose -->
+        <path d="M100 30 Q70 30 60 60 Q55 90 80 100 Q60 110 65 140 Q75 165 100 165 Q125 165 135 140 Q140 110 120 100 Q145 90 140 60 Q130 30 100 30 Z" fill="#b8362c"/>
+        <!-- stem -->
+        <path d="M100 165 L100 215" stroke="#5b6a3a"/>
+        <!-- leaves -->
+        <path d="M100 185 Q75 175 65 165 Q85 175 100 185 Z" fill="#5b6a3a" stroke="#5b6a3a"/>
+        <path d="M100 195 Q125 185 135 175 Q115 185 100 195 Z" fill="#5b6a3a" stroke="#5b6a3a"/>
+      </svg>
+    </div>
+
+    <p class="greeting-text" style="font-size:20px; max-width:340px;">
+      Біз үшін ең бастысы — сіз!<br>
+      Бірақ біз пастельді әрі<br>
+      үйлесімді түстерді ұнатамыз
+    </p>
+
+    <div class="palette">
+      <div class="heart-sw" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 36%22><path d=%22M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z%22 fill=%22%23556640%22/></svg>')"></div>
+      <div class="heart-sw" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 36%22><path d=%22M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z%22 fill=%22%23b8362c%22/></svg>')"></div>
+      <div class="heart-sw" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 36%22><path d=%22M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z%22 fill=%22%23e8a87c%22/></svg>')"></div>
+      <div class="heart-sw" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 36%22><path d=%22M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z%22 fill=%22%23c9a96e%22/></svg>')"></div>
+      <div class="heart-sw" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 36%22><path d=%22M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z%22 fill=%22%232a2a2a%22/></svg>')"></div>
+      <div class="heart-sw" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 36%22><path d=%22M20 32 C 8 24 2 16 4 9 C 6 3 12 3 16 7 Q 20 11 20 13 Q 20 11 24 7 C 28 3 34 3 36 9 C 38 16 32 24 20 32 Z%22 fill=%22%23f5ecd6%22 stroke=%22%23b8362c%22 stroke-width=%221.5%22/></svg>')"></div>
     </div>
   </section>
 
+  <hr class="sep">
+
   <!-- RSVP -->
-  <section class="page cream rsvp-page">
-    <div class="floral top-wide"><img src="assets/bouquet.png" alt=""></div>
-    <div class="floral bl"><img src="assets/branch.png" alt=""></div>
-    <div class="content">
-      <h2>Құрметті қонақ,<br>тойға келуіңізді<br>растауыңызды сұраймыз</h2>
-      <form action="https://formspree.io/f/ТВОЙ_ID" method="POST">
-        <input class="rsvp-name" type="text" name="name" placeholder="Атыңыз" required>
-        <div class="rsvp-options" style="margin-top:14px;">
-          <label class="rsvp-opt">
-            <input type="radio" name="attendance" value="alone" required>
-            <span class="radio"></span>
-            <span>Иә, жалғыз өзім барамын</span>
-          </label>
-          <label class="rsvp-opt">
-            <input type="radio" name="attendance" value="couple">
-            <span class="radio"></span>
-            <span>Жұбайыммен бірге барамын</span>
-          </label>
-          <label class="rsvp-opt">
-            <input type="radio" name="attendance" value="no">
-            <span class="radio"></span>
-            <span>Өкінішке орай, келе алмаймын</span>
-          </label>
-        </div>
-        <button class="submit-btn" type="submit">Жауап беру</button>
-      </form>
+  <section class="page rsvp">
+    <div class="section-title with-strike">Анкета</div>
+    <p class="greeting-text" style="font-size:20px;">
+      Тойға дайындалу үшін<br>
+      қысқа сауалнаманы толтырыңыз
+    </p>
+    <form action="https://formspree.io/f/ТВОЙ_ID" method="POST">
+      <input type="text" name="name" placeholder="Атыңыз" required>
+      <select name="attendance" required>
+        <option value="">Келе аласыз ба?</option>
+        <option value="alone">Иә, жалғыз өзім барамын</option>
+        <option value="couple">Жұбайыммен бірге барамын</option>
+        <option value="no">Өкінішке орай, келе алмаймын</option>
+      </select>
+      <input type="text" name="guests" placeholder="Қанша қонақ?">
+      <button class="submit-btn" type="submit">Жауап жіберу</button>
+    </form>
+    <p style="font-family:'Caveat', cursive; font-size:16px; color:var(--muted); margin-top:12px;">
+      1 шілдеге дейін жауап беруіңізді сұраймыз
+    </p>
+  </section>
+
+  <hr class="sep">
+
+  <!-- COUNTDOWN -->
+  <section class="page">
+    <div class="section-title with-strike" style="display:inline-block;">
+      Кездескенше
+      <span style="position:absolute; top:-10px; left:-20px; width:24px; height:24px;"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
+      <span style="position:absolute; top:-14px; right:-20px; width:20px; height:20px;"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
+      <span style="position:absolute; top:-6px; right:30%; width:14px; height:14px;"><svg viewBox="0 0 40 36"><use href="#heart"/></svg></span>
+    </div>
+
+    <div class="countdown">
+      <div class="count-cell"><div class="n" id="d">0</div><div class="u">күн</div></div>
+      <div class="count-cell"><div class="n" id="h">0</div><div class="u">сағат</div></div>
+      <div class="count-cell"><div class="n" id="m">0</div><div class="u">минут</div></div>
+      <div class="count-cell"><div class="n" id="s">0</div><div class="u">секунд</div></div>
+    </div>
+
+    <div class="couple-illust">
+      <svg viewBox="0 0 220 220" fill="none" stroke="#b8362c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <!-- groom -->
+        <g>
+          <circle cx="80" cy="50" r="18"/>
+          <path d="M65 48 Q65 40 75 36 Q85 36 92 42 Q95 48 90 48"/>
+          <path d="M76 54 Q78 56 80 54 M84 54 Q86 56 88 54"/>
+          <path d="M62 70 L60 180 L100 180 L100 70 Q90 62 80 62 Q70 62 62 70 Z"/>
+          <path d="M75 70 L80 105 L85 70" stroke="#b8362c" stroke-width="1.4"/>
+          <path d="M78 75 L78 95 L80 105 L82 95 L82 75" fill="#b8362c" stroke="#b8362c"/>
+        </g>
+        <!-- bride -->
+        <g>
+          <circle cx="150" cy="55" r="18"/>
+          <path d="M133 55 Q133 40 150 38 Q167 40 167 55 Q166 50 160 48 Q150 47 150 52 Q150 47 140 48 Q134 50 133 55 Z" fill="#b8362c" stroke="#b8362c"/>
+          <path d="M132 50 Q120 90 130 200 L155 200 Q145 130 152 75" fill="none" stroke-opacity="0.5"/>
+          <path d="M147 58 Q149 60 151 58 M155 58 Q157 60 159 58"/>
+          <path d="M138 75 L120 200 L180 200 L165 75 Q152 68 138 75 Z"/>
+          <circle cx="153" cy="115" r="5" fill="#b8362c"/>
+          <circle cx="148" cy="118" r="4" fill="#b8362c"/>
+          <circle cx="158" cy="118" r="4" fill="#b8362c"/>
+        </g>
+      </svg>
+    </div>
+
+    <div style="font-family:'Marck Script', cursive; color:var(--red); font-size:32px; margin-top:8px;">
+      Сізді күтеміз!
     </div>
   </section>
 
@@ -675,6 +758,7 @@
     document.getElementById('d').textContent = Math.floor(diff / 86400000);
     document.getElementById('h').textContent = Math.floor(diff / 3600000) % 24;
     document.getElementById('m').textContent = Math.floor(diff / 60000) % 60;
+    document.getElementById('s').textContent = Math.floor(diff / 1000) % 60;
   }
   tick(); setInterval(tick, 1000);
 </script>

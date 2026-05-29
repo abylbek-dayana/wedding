@@ -129,7 +129,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 4px;
+    gap: 0;
     position: relative;
     z-index: 1;
   }
@@ -445,38 +445,37 @@
     font-size: 22px;
   }
 
-  /* Snap scroll for mobile */
+  /* Mobile layout */
   @media (max-width: 768px) {
-    html { scroll-snap-type: y mandatory; }
     .page {
-      min-height: 100vh;
-      min-height: 100dvh;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
+      min-height: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 90px 18px 24px;
+      padding: 36px 18px;
     }
+    /* Hero stays full-screen */
     .page.hero {
+      min-height: 100vh;
+      min-height: 100dvh;
       justify-content: space-between;
-      padding-top: 100px;
-      padding-bottom: 28px;
+      padding: 100px 18px 28px;
     }
     .hero .title-block { width: 100%; text-align: center; }
     .hero .title { font-size: 28px; margin-bottom: 0; }
     .hero .title-sub { font-size: 36px; margin-top: -8px; margin-bottom: 0; }
-    .photos-wrap { margin: -30px auto 0; gap: 2px; }
-    .photo { max-width: none; width: 49%; }
+    .photos-wrap { margin: -30px auto 0; gap: 0; }
+    .photo { max-width: none; width: 50%; }
+    .photo-left { margin-right: -8px; }
     .hearts-zone { height: 120px; }
     .date-pill { width: 100%; font-size: 26px; padding: 14px 22px; margin: 0; box-sizing: border-box; }
     .container { padding: 0; max-width: none; }
     .top-bar { position: fixed; }
     .top-pill { font-size: 18px; padding: 10px 20px; }
     .top-pill .small { font-size: 14px; }
-    /* Hide separators on mobile (snap-scroll already separates pages) */
+    /* Hide separators on mobile */
     .sep { display: none; }
-    /* Make sure long sections fit */
+    /* Tighten sizes */
     .program-list { margin: 12px auto 0; }
     .program-row { margin: 12px 0; }
     .program-row .time { font-size: 32px; }

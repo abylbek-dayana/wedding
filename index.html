@@ -9,9 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Marck+Script&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #fff0e1;
-    --bg-2: #f5e4cf;
-    --paper: #fff5e6;
+    --bg: #ebdfc6;
+    --bg-2: #e6d6b3;
+    --paper: #f0e6cf;
     --red: #b8362c;
     --red-light: #d04035;
     --red-soft: #e0786a;
@@ -367,7 +367,8 @@
     max-width: 420px;
     margin: 18px auto 18px;
   }
-  .loc-illust img {
+  .loc-illust img,
+  .loc-illust svg {
     width: 100%;
     height: auto;
     display: block;
@@ -799,7 +800,94 @@
     <div class="section-title with-strike">Локация</div>
 
     <div class="loc-illust">
-      <img src="assets/restaurant.png" alt="Aisultan Plaza">
+      <svg viewBox="0 0 400 200" fill="none" stroke="#b8362c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background chair backs visible behind table -->
+        <path d="M110 70 Q110 58 120 58 Q130 58 130 70 L130 95"/>
+        <path d="M160 70 Q160 58 170 58 Q180 58 180 70 L180 95"/>
+        <path d="M215 70 Q215 58 225 58 Q235 58 235 70 L235 95"/>
+        <path d="M270 70 Q270 58 280 58 Q290 58 290 70 L290 95"/>
+        <path d="M325 70 Q325 58 335 58 Q345 58 345 70 L345 95"/>
+
+        <!-- Standing figure at left -->
+        <g>
+          <circle cx="50" cy="55" r="6"/>
+          <path d="M50 61 L50 110"/>
+          <path d="M46 78 Q40 90 38 100"/>
+          <path d="M54 78 Q60 90 62 100"/>
+          <path d="M50 110 L43 150"/>
+          <path d="M50 110 L57 150"/>
+        </g>
+
+        <!-- Table top edge -->
+        <path d="M20 100 L380 100"/>
+
+        <!-- Tableware on top of table -->
+        <!-- Wine glasses -->
+        <path d="M82 80 Q82 92 86 94 Q90 92 90 80 Z"/>
+        <path d="M86 94 L86 100"/>
+        <path d="M132 78 Q132 92 136 94 Q140 92 140 78 Z"/>
+        <path d="M136 94 L136 100"/>
+        <path d="M188 80 Q188 92 192 94 Q196 92 196 80 Z"/>
+        <path d="M192 94 L192 100"/>
+        <path d="M242 78 Q242 92 246 94 Q250 92 250 78 Z"/>
+        <path d="M246 94 L246 100"/>
+        <path d="M298 80 Q298 92 302 94 Q306 92 306 80 Z"/>
+        <path d="M302 94 L302 100"/>
+
+        <!-- Candles (two pairs) -->
+        <path d="M105 78 L105 100 M110 78 L110 100"/>
+        <path d="M105 76 Q104 72 105 70 Q106 72 105 76 M110 76 Q109 72 110 70 Q111 72 110 76" fill="#b8362c"/>
+        <path d="M215 78 L215 100"/>
+        <path d="M215 76 Q214 72 215 70 Q216 72 215 76" fill="#b8362c"/>
+        <path d="M268 78 L268 100"/>
+        <path d="M268 76 Q267 72 268 70 Q269 72 268 76" fill="#b8362c"/>
+
+        <!-- Plates (ovals on table edge) -->
+        <ellipse cx="120" cy="100" rx="10" ry="2"/>
+        <ellipse cx="160" cy="100" rx="10" ry="2"/>
+        <ellipse cx="205" cy="100" rx="10" ry="2"/>
+        <ellipse cx="255" cy="100" rx="10" ry="2"/>
+        <ellipse cx="320" cy="100" rx="10" ry="2"/>
+
+        <!-- Vase with flower at right -->
+        <path d="M353 82 Q353 96 357 98 Q361 96 361 82 Z"/>
+        <path d="M357 82 L357 68"/>
+        <circle cx="357" cy="64" r="3.5" fill="#b8362c"/>
+        <path d="M353 68 L350 64 M361 68 L364 64" stroke="#b8362c"/>
+
+        <!-- Tablecloth front face -->
+        <path d="M20 100 L20 155 L380 155 L380 100"/>
+        <!-- Pleats -->
+        <path d="M55 100 L55 155 M95 100 L95 155 M145 100 L145 155 M195 100 L195 155 M245 100 L245 155 M295 100 L295 155 M345 100 L345 155" stroke-width="0.8" opacity="0.5"/>
+        <!-- Hanging bottom edge -->
+        <path d="M20 155 Q40 158 60 155 Q80 158 100 155 Q120 158 140 155 Q160 158 180 155 Q200 158 220 155 Q240 158 260 155 Q280 158 300 155 Q320 158 340 155 Q360 158 380 155"/>
+
+        <!-- Foreground chairs (legs and seat outlines below table) -->
+        <!-- chair 1 -->
+        <path d="M55 155 L48 195 M85 155 L92 195"/>
+        <path d="M52 175 L88 175"/>
+        <path d="M58 175 Q58 168 70 168 Q82 168 82 175"/>
+        <!-- chair 2 -->
+        <path d="M110 155 L105 195 M140 155 L145 195"/>
+        <path d="M108 175 L142 175"/>
+        <path d="M113 175 Q113 168 125 168 Q137 168 137 175"/>
+        <!-- chair 3 -->
+        <path d="M165 155 L162 195 M195 155 L198 195"/>
+        <path d="M163 175 L197 175"/>
+        <path d="M168 175 Q168 168 180 168 Q192 168 192 175"/>
+        <!-- chair 4 -->
+        <path d="M220 155 L218 195 M250 155 L252 195"/>
+        <path d="M218 175 L252 175"/>
+        <path d="M223 175 Q223 168 235 168 Q247 168 247 175"/>
+        <!-- chair 5 -->
+        <path d="M275 155 L273 195 M305 155 L307 195"/>
+        <path d="M273 175 L307 175"/>
+        <path d="M278 175 Q278 168 290 168 Q302 168 302 175"/>
+        <!-- chair 6 -->
+        <path d="M330 155 L328 195 M360 155 L362 195"/>
+        <path d="M328 175 L362 175"/>
+        <path d="M333 175 Q333 168 345 168 Q357 168 357 175"/>
+      </svg>
     </div>
 
     <div class="loc-venue">Aisultan Plaza</div>

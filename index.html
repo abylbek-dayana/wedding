@@ -362,6 +362,44 @@
   }
   .loc-heart svg { width: 100%; height: auto; }
 
+  .loc-illust {
+    width: 100%;
+    max-width: 420px;
+    margin: 18px auto 18px;
+  }
+  .loc-illust img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .loc-venue {
+    font-family: 'Marck Script', cursive;
+    color: var(--red);
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 6px;
+  }
+  .loc-city {
+    font-family: 'Caveat', cursive;
+    color: var(--ink);
+    font-size: 22px;
+    margin-top: 4px;
+  }
+  .loc-map-btn {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--red);
+    color: #f5ecd6;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 8px 18px rgba(184,54,44,0.3);
+    transition: transform 0.25s;
+  }
+  .loc-map-btn:hover { transform: translateY(-2px); }
+
   /* DRESS CODE */
   .rose-illust { width: 200px; margin: 10px auto; }
   .rose-illust svg { width: 100%; height: auto; }
@@ -760,17 +798,16 @@
   <section class="page">
     <div class="section-title with-strike">Локация</div>
 
-    <!-- Big heart with venue -->
-    <div class="loc-heart">
-      <svg viewBox="0 0 220 200" fill="none">
-        <path d="M110 180 C 30 130 -5 80 30 40 C 55 15 90 25 110 60 C 130 25 165 15 190 40 C 225 80 190 130 110 180 Z" fill="#b8362c"/>
-        <text x="110" y="80" text-anchor="middle" fill="#f5ecd6" font-family="Caveat, cursive" font-size="22" font-weight="600">Aisultan Plaza</text>
-        <text x="110" y="105" text-anchor="middle" fill="#f5ecd6" font-family="Caveat, cursive" font-size="18">Алматы қаласы</text>
-        <foreignObject x="50" y="115" width="120" height="44">
-          <a xmlns="http://www.w3.org/1999/xhtml" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener" style="display:block; text-align:center; color:#fffaef; font-family:Caveat, cursive; font-size: 18px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.4); text-decoration:none;">→ Картадан көру</a>
-        </foreignObject>
-      </svg>
+    <div class="loc-illust">
+      <img src="assets/restaurant.png" alt="Aisultan Plaza">
     </div>
+
+    <div class="loc-venue">Aisultan Plaza</div>
+    <div class="loc-city">Алматы қаласы</div>
+
+    <a class="loc-map-btn" href="https://2gis.kz/almaty/firm/70000001041712972/77.049459%2C43.305557" target="_blank" rel="noopener">
+      → Картадан көру
+    </a>
   </section>
 
   <hr class="sep">

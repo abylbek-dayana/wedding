@@ -127,38 +127,13 @@
   .couple-portrait {
     position: relative;
     width: 100%;
-    max-width: 540px;
+    max-width: 460px;
     margin: -20px auto 0;
-    aspect-ratio: 812 / 616;
   }
-  .couple-portrait .bg {
-    position: absolute;
-    inset: 0;
+  .couple-portrait img {
     width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-  }
-  .couple-portrait .face {
-    position: absolute;
-    object-fit: cover;
-    object-position: 50% 12%;
-    z-index: 2;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  /* Frame inner positions (sampled from the SVG layout, fine-tunable) */
-  .couple-portrait .face-left {
-    top: 13%;
-    left: 22.5%;
-    width: 25.5%;
-    height: 36%;
-  }
-  .couple-portrait .face-right {
-    top: 13.5%;
-    left: 55%;
-    width: 25.5%;
-    height: 36%;
+    height: auto;
+    display: block;
   }
 
   /* Floating hearts */
@@ -592,9 +567,7 @@
         <span class="h" style="top:62%; right:30%; width:22px; height:22px; transform:rotate(18deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
       </div>
       <div class="couple-portrait">
-        <img class="face face-left" src="assets/abylbek-cut.png" alt="Абылбек">
-        <img class="face face-right" src="assets/dayana-cut.png" alt="Даяна">
-        <img class="bg" src="assets/couple_transparent.svg" alt="">
+        <img src="assets/couple_wedding.png" alt="Абылбек және Даяна">
       </div>
     </div>
 

@@ -525,21 +525,27 @@
 <!-- Reusable SVG hearts (hand-drawn sketchy style) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <!-- Hand-scribbled marker-fill heart -->
     <symbol id="heart" viewBox="0 0 50 44">
-      <!-- main filled body -->
+      <clipPath id="heart-clip">
+        <path d="M25 40 C 10 30 3 20 5 11 C 7 4 14 3 18 8 Q 23 13 25 16 Q 27 13 32 8 C 36 3 43 4 45 11 C 47 20 40 30 25 40 Z"/>
+      </clipPath>
+      <!-- back-and-forth crayon scribble, clipped to heart shape -->
+      <g clip-path="url(#heart-clip)" stroke="#b8362c" stroke-width="2.6" stroke-linecap="round" fill="none" opacity="0.92">
+        <path d="M6 12 L44 7 M45 11 L5 17 M5 21 L45 15 M45 20 L6 26 M7 30 L44 23 M43 29 L9 35 M11 37 L40 30 M37 35 L17 39"/>
+      </g>
+      <!-- rough double outline -->
       <path d="M25 40 C 10 30 3 20 5 11 C 7 4 14 3 18 8 Q 23 13 25 16 Q 27 13 32 8 C 36 3 43 4 45 11 C 47 20 40 30 25 40 Z"
-            fill="#b8362c"/>
-      <!-- darker scribble inside -->
-      <path d="M14 14 Q 20 22 24 28 M28 14 Q 33 18 35 22" stroke="#8a261c" stroke-width="0.8" fill="none" opacity="0.5"/>
-      <!-- highlight stroke -->
-      <path d="M9 12 Q 12 8 16 9" stroke="#d65447" stroke-width="1" fill="none" opacity="0.7"/>
+            fill="none" stroke="#b8362c" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M24.4 39 C 10 30 4 20 6 11.5 C 7.5 5 14 4 18 8.6 Q 23 13.4 25 16.4 Q 27.4 13 32.2 8.4 C 36.4 4 43 5 44.4 11.5"
+            fill="none" stroke="#b8362c" stroke-width="1.1" stroke-linejoin="round" opacity="0.55"/>
     </symbol>
+    <!-- Clean hand-drawn outline heart -->
     <symbol id="heart-out" viewBox="0 0 50 44">
-      <!-- outline heart -->
       <path d="M25 40 C 10 30 3 20 5 11 C 7 4 14 3 18 8 Q 23 13 25 16 Q 27 13 32 8 C 36 3 43 4 45 11 C 47 20 40 30 25 40 Z"
-            fill="none" stroke="#b8362c" stroke-width="2.2" stroke-linejoin="round"/>
-      <!-- small scribble inside top dip -->
-      <path d="M22 14 Q 25 17 28 14" stroke="#b8362c" stroke-width="1" fill="none" opacity="0.6"/>
+            fill="none" stroke="#b8362c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M24.3 39 C 11 30 4.2 20.5 6.2 12 C 7.6 5.4 14 4.2 18 8.8 Q 23 13.6 25 16.6"
+            fill="none" stroke="#b8362c" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
     </symbol>
   </defs>
 </svg>
@@ -557,14 +563,14 @@
 
     <div class="photos-area">
       <div class="hearts-zone">
-        <span class="h" style="top:6%; left:10%; width:42px; height:42px; transform:rotate(-18deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
-        <span class="h" style="top:30%; left:2%; width:28px; height:28px; transform:rotate(10deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
-        <span class="h" style="top:55%; left:18%; width:36px; height:36px; transform:rotate(-8deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
-        <span class="h" style="top:0%; left:35%; width:32px; height:32px; transform:rotate(14deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
-        <span class="h" style="top:38%; left:42%; width:24px; height:24px; transform:rotate(-12deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
-        <span class="h" style="top:12%; right:18%; width:46px; height:46px; transform:rotate(8deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
-        <span class="h" style="top:48%; right:8%; width:30px; height:30px; transform:rotate(-20deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
-        <span class="h" style="top:62%; right:30%; width:22px; height:22px; transform:rotate(18deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
+        <span class="h" style="top:4%; left:8%; width:62px; height:62px; transform:rotate(-18deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
+        <span class="h" style="top:30%; left:1%; width:40px; height:40px; transform:rotate(10deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
+        <span class="h" style="top:56%; left:16%; width:54px; height:54px; transform:rotate(-8deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
+        <span class="h" style="top:-2%; left:34%; width:48px; height:48px; transform:rotate(14deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
+        <span class="h" style="top:40%; left:42%; width:36px; height:36px; transform:rotate(-12deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
+        <span class="h" style="top:10%; right:16%; width:66px; height:66px; transform:rotate(8deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
+        <span class="h" style="top:50%; right:6%; width:46px; height:46px; transform:rotate(-20deg);"><svg viewBox="0 0 50 44"><use href="#heart"/></svg></span>
+        <span class="h" style="top:64%; right:28%; width:34px; height:34px; transform:rotate(18deg);"><svg viewBox="0 0 50 44"><use href="#heart-out"/></svg></span>
       </div>
       <div class="couple-portrait">
         <img src="assets/sticker_no_bg.png" alt="Абылбек және Даяна">

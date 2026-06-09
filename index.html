@@ -247,6 +247,14 @@
   }
   .calendar-img img { width: 100%; height: auto; display: block; }
 
+  /* Program image */
+  .program-img {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .program-img img { width: 100%; height: auto; display: block; }
+
   /* String of lights */
   .lights {
     width: 100%;
@@ -609,103 +617,8 @@
 
   <!-- PROGRAM -->
   <section class="page">
-    <div class="section-title with-strike">Бағдарлама</div>
-
-    <div class="program-list">
-      <!-- 17:00 — Гости -->
-      <div class="program-row">
-        <div class="icon">
-          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 20 Q20 38 32 44 Q44 38 44 20 Z"/>
-            <path d="M32 44 L32 62 M24 62 L40 62"/>
-            <path d="M36 20 Q36 38 48 44 Q60 38 60 20 Z"/>
-            <path d="M48 44 L48 62 M40 62 L56 62"/>
-            <path d="M14 12 L18 16 M22 8 L22 14 M30 12 L26 16"/>
-            <path d="M52 12 L56 16 M62 8 L62 14 M70 12 L66 16"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">қонақтарды қарсы алу</div>
-          <div class="time">17:00</div>
-          <div class="note">құттықтасып, бірге фотоға түсеміз</div>
-        </div>
-      </div>
-
-      <!-- 18:00 — Беташар -->
-      <div class="program-row">
-        <div class="icon">
-          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- vase with flowers -->
-            <path d="M28 60 L26 78 L54 78 L52 60 Z"/>
-            <path d="M28 60 L52 60"/>
-            <path d="M40 60 L40 36"/>
-            <path d="M40 36 Q34 30 30 24 Q38 26 40 36"/>
-            <path d="M40 36 Q46 30 50 24 Q42 26 40 36"/>
-            <path d="M36 42 Q30 38 26 32 Q34 36 36 42"/>
-            <path d="M44 42 Q50 38 54 32 Q46 36 44 42"/>
-            <circle cx="32" cy="26" r="3" fill="#b8362c"/>
-            <circle cx="48" cy="26" r="3" fill="#b8362c"/>
-            <circle cx="40" cy="22" r="3" fill="#b8362c"/>
-            <circle cx="28" cy="34" r="2.5" fill="#b8362c"/>
-            <circle cx="52" cy="34" r="2.5" fill="#b8362c"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">беташар</div>
-          <div class="time">18:00</div>
-          <div class="note">келінмен таныстыру дәстүрі</div>
-        </div>
-      </div>
-
-      <!-- 19:00 — Той дастарханы -->
-      <div class="program-row">
-        <div class="icon">
-          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- candles -->
-            <path d="M22 30 L22 64 M30 30 L30 64 M38 30 L38 64"/>
-            <path d="M22 28 Q21 24 22 22 Q23 24 22 28 M30 28 Q29 24 30 22 Q31 24 30 28 M38 28 Q37 24 38 22 Q39 24 38 28" fill="#b8362c"/>
-            <path d="M16 64 L44 64"/>
-            <!-- wine glass right -->
-            <path d="M52 36 Q52 50 60 52 Q68 50 68 36 Z"/>
-            <path d="M60 52 L60 64 M54 64 L66 64"/>
-            <circle cx="60" cy="42" r="3" fill="#b8362c"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">той дастарханы</div>
-          <div class="time">19:00</div>
-          <div class="note">дәмді тағамдар мен көңілді сәттер</div>
-        </div>
-      </div>
-
-      <!-- 22:00 — Cake -->
-      <div class="program-row">
-        <div class="icon">
-          <svg viewBox="0 0 80 80" fill="none" stroke="#b8362c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- wedding cake -->
-            <path d="M30 32 L50 32 L52 44 L28 44 Z"/>
-            <path d="M22 44 L58 44 L60 60 L20 60 Z"/>
-            <path d="M14 60 L66 60 L68 76 L12 76 Z"/>
-            <path d="M40 32 L40 26"/>
-            <path d="M40 24 Q38 20 40 18 Q42 20 40 24" fill="#b8362c"/>
-            <!-- heart on top -->
-            <path d="M38 28 Q34 26 36 23 Q38 22 40 26 Q42 22 44 23 Q46 26 42 28 Q40 30 38 28 Z" fill="#b8362c"/>
-            <!-- icing dots -->
-            <circle cx="34" cy="40" r="1.5" fill="#b8362c"/>
-            <circle cx="40" cy="40" r="1.5" fill="#b8362c"/>
-            <circle cx="46" cy="40" r="1.5" fill="#b8362c"/>
-            <circle cx="28" cy="54" r="1.5" fill="#b8362c"/>
-            <circle cx="36" cy="54" r="1.5" fill="#b8362c"/>
-            <circle cx="44" cy="54" r="1.5" fill="#b8362c"/>
-            <circle cx="52" cy="54" r="1.5" fill="#b8362c"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">той тортын тілу</div>
-          <div class="time">22:00</div>
-          <div class="note">бақытты сәттің тәтті символы</div>
-        </div>
-      </div>
+    <div class="program-img">
+      <img src="assets/program.png" alt="Бағдарлама">
     </div>
   </section>
 

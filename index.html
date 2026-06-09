@@ -25,7 +25,7 @@
   html, body { overflow-x: hidden; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    font-family: 'Marck Script', 'Comic Sans MS', cursive;
     background: var(--bg);
     color: var(--ink);
     line-height: 1.4;
@@ -55,7 +55,7 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     pointer-events: auto;
   }
-  .top-pill .small { font-family: 'Caveat', cursive; font-size: 17px; opacity: 0.85; display:block; }
+  .top-pill .small { font-family: 'Marck Script', cursive; font-size: 17px; opacity: 0.85; display:block; }
 
   .container {
     max-width: 540px;
@@ -153,7 +153,7 @@
     margin-top: 18px;
     color: #f0e6cf;
     padding: 28px 54px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 30px;
     filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
   }
@@ -170,7 +170,7 @@
   /* Section headers */
   .section-title {
     font-family: 'Marck Script', cursive;
-    color: var(--red);
+    color: var(--green);
     font-size: 48px;
     line-height: 1;
     margin-bottom: 12px;
@@ -181,13 +181,13 @@
     position: absolute;
     bottom: 4px; left: 5%; right: 5%;
     height: 2px;
-    background: var(--red);
+    background: var(--green);
     border-radius: 1px;
   }
 
   /* GREETING */
   .greeting-text {
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 22px;
     color: var(--ink);
     line-height: 1.5;
@@ -273,7 +273,7 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 4px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 20px;
     color: var(--ink);
   }
@@ -282,7 +282,7 @@
     font-size: 14px;
     letter-spacing: 0.05em;
     padding-bottom: 6px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-weight: 600;
   }
   .calendar .day { padding: 4px 0; position: relative; }
@@ -318,7 +318,7 @@
   .program-row .icon svg { width: 100%; height: 100%; }
   .program-row .info { flex: 1; }
   .program-row .label {
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     color: var(--ink);
     font-size: 18px;
     line-height: 1.1;
@@ -331,7 +331,7 @@
     margin-top: 2px;
   }
   .program-row .note {
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     color: var(--muted);
     font-size: 16px;
     line-height: 1.2;
@@ -347,7 +347,7 @@
     border-radius: 14px;
     margin: 14px auto;
     max-width: 320px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 19px;
     line-height: 1.3;
   }
@@ -360,7 +360,7 @@
     padding-top: 8px;
     margin-top: 4px;
     font-size: 18px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
   }
   .loc-heart {
     position: relative;
@@ -388,23 +388,31 @@
     margin-top: 6px;
   }
   .loc-city {
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     color: var(--ink);
     font-size: 22px;
     margin-top: 4px;
   }
   .loc-map-btn {
     display: inline-block;
+    position: relative;
     margin-top: 16px;
-    background: var(--red);
-    color: #f5ecd6;
-    padding: 12px 28px;
-    border-radius: 999px;
-    font-family: 'Caveat', cursive;
-    font-size: 20px;
+    color: #f0e6cf;
+    padding: 22px 44px;
+    font-family: 'Marck Script', cursive;
+    font-size: 22px;
     text-decoration: none;
-    box-shadow: 0 8px 18px rgba(184,54,44,0.3);
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
     transition: transform 0.25s;
+  }
+  .loc-map-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 130' preserveAspectRatio='none'><path fill='%235b6a3a' d='M28 46 C6 58 6 86 26 98 C44 109 78 104 120 106 C170 108 210 116 262 110 C316 104 358 114 380 96 C398 81 398 52 378 42 C356 31 318 38 268 32 C212 25 162 20 112 26 C74 30 46 34 28 46 Z'/></svg>");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
   .loc-map-btn:hover { transform: translateY(-2px); }
 
@@ -431,7 +439,7 @@
     border: 1.5px solid var(--red);
     background: rgba(255,255,255,0.5);
     border-radius: 999px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 18px;
     color: var(--ink);
     text-align: center;
@@ -467,7 +475,7 @@
     line-height: 1;
   }
   .count-cell .u {
-    font-family: 'Caveat', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 14px;
     color: var(--muted);
     margin-top: 2px;
@@ -502,6 +510,9 @@
       justify-content: center;
       padding: 36px 18px;
     }
+    /* Greeting: drop forced breaks on mobile so it flows into ~3 lines */
+    .greet-intro br { display: none; }
+    .greet-intro { font-size: 19px; max-width: 340px; line-height: 1.4; }
     /* Hero stays full-screen */
     .page.hero {
       min-height: 100vh;
@@ -598,7 +609,7 @@
   <!-- GREETING + CALENDAR (combined) -->
   <section class="page">
     <div class="section-title with-strike">Таныдыңыз ба?</div>
-    <p class="greeting-text">
+    <p class="greeting-text greet-intro">
       Уақыт байқалмай өте шықты,<br>
       ал осы екі бөбектің жақын арада<br>
       үйлену тойы өтеді.<br>
@@ -694,7 +705,7 @@
       <input type="text" name="guests" placeholder="Қанша қонақ?">
       <button class="submit-btn" type="submit">Жауап жіберу</button>
     </form>
-    <p style="font-family:'Caveat', cursive; font-size: 16px; color:var(--muted); margin-top:12px;">
+    <p style="font-family:'Marck Script', cursive; font-size: 16px; color:var(--muted); margin-top:12px;">
       1 шілдеге дейін жауап беруіңізді сұраймыз
     </p>
   </section>

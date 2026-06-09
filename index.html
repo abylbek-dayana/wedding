@@ -152,14 +152,22 @@
 
   .date-pill {
     display: inline-block;
+    position: relative;
     margin-top: 18px;
-    background: var(--green);
     color: #f0e6cf;
-    padding: 16px 40px;
-    border-radius: 26px;
+    padding: 28px 54px;
     font-family: 'Caveat', cursive;
     font-size: 30px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.12));
+  }
+  .date-pill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 130' preserveAspectRatio='none'><path fill='%235b6a3a' d='M28 46 C6 58 6 86 26 98 C44 109 78 104 120 106 C170 108 210 116 262 110 C316 104 358 114 380 96 C398 81 398 52 378 42 C356 31 318 38 268 32 C212 25 162 20 112 26 C74 30 46 34 28 46 Z'/></svg>");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 
   /* Section headers */
@@ -493,7 +501,7 @@
     .hero .title-sub { font-size: 47px; margin-top: -8px; margin-bottom: 0; }
     .couple-portrait { margin: -20px auto 0; }
     .hearts-zone { height: 120px; }
-    .date-pill { width: 100%; font-size: 26px; padding: 14px 22px; margin: 0; box-sizing: border-box; }
+    .date-pill { width: 100%; font-size: 26px; padding: 26px 22px; margin: 0; box-sizing: border-box; }
     .container { padding: 0; max-width: none; }
     .top-bar { position: fixed; }
     .top-pill { font-size: 18px; padding: 10px 20px; }
